@@ -51,15 +51,19 @@ def scan_pmaports(ports_dir: Path) -> dict[str, dict[str, Any]]:
         device_id = package_name.removeprefix("device-")
         raw_text = info_path.read_text(encoding="utf-8", errors="replace")
         fields = parse_deviceinfo(raw_text)
+        relative_source = info_path.relative_to(ports_dir)
+        archived = "archived" in relative_source.parts
         record: dict[str, Any] = {
             "id": device_id,
             "name": fields.get("deviceinfo_name", device_id),
             "manufacturer": fields.get("deviceinfo_manufacturer", ""),
             "arch": fields.get("deviceinfo_arch", "unknown"),
-            "source": str(info_path.relative_to(ports_dir)),
+            "source": str(relative_source),
+            "device_category": relative_source.parts[1] if len(relative_source.parts) > 2 else "unknown",
             "deviceinfo": fields,
             "deviceinfo_text": raw_text,
             "upstream_present": True,
+            "catalog_status": "metadata-synced-archived" if archived else "metadata-synced",
         }
         if device_id in found:
             found[device_id].setdefault("alternate_sources", []).append(record["source"])
@@ -100,6 +104,11 @@ def merge_catalogs(
             result = {**old, **current, "upstream_present": True}
             if profile is not None:
                 result["profile"] = profile
+                result["catalog_status"] = old.get("catalog_status", "arch-native-priority")
+            else:
+                result["catalog_status"] = current.get(
+                    "catalog_status", "metadata-synced"
+                )
             merged[device_id] = result
         else:
             merged[device_id] = dict(current)
