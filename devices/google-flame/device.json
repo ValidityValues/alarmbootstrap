@@ -1,0 +1,24 @@
+{
+  "id": "google-flame",
+  "name": "Google Pixel 4",
+  "manufacturer": "Google",
+  "architecture": "aarch64",
+  "soc": "qcom-sm8150",
+  "postmarketos": {
+    "device_package": "device-google-flame",
+    "kernel_package": "linux-postmarketos-qcom-sm8150",
+    "firmware_package": "firmware-google-flame",
+    "efi_kernel": "/boot/linux.efi",
+    "vmlinuz": "/boot/vmlinuz",
+    "dtb": "/boot/dtbs/qcom/sm8150-google-flame.dtb",
+    "modules": "/lib/modules/*sm8150*"
+  },
+  "uboot": {
+    "repository": "https://gitlab.com/andrewgigena/u-boot.git",
+    "branch": "andrew/google-flame",
+    "device_config": "sm8150-google-flame",
+    "partition_for_blkmap": "userdata",
+    "fastboot_flash_partition": "boot"
+  },
+  "status": "priority-device; hardware validation required"
+}

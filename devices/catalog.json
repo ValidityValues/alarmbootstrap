@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "source": "https://gitlab.postmarketos.org/postmarketOS/pmaports.git",
+  "devices": [
+    {
+      "id": "google-flame",
+      "name": "Google Pixel 4",
+      "manufacturer": "Google",
+      "arch": "aarch64",
+      "upstream_present": true,
+      "catalog_status": "arch-native-priority",
+      "profile": {
+        "soc": "Qualcomm Snapdragon 855 / SM8150",
+        "kernel_package": "linux-postmarketos-qcom-sm8150",
+        "device_package": "device-google-flame",
+        "firmware_package": "firmware-google-flame",
+        "dtb": "/boot/dtbs/qcom/sm8150-google-flame.dtb",
+        "kernel_efi": "/boot/linux.efi",
+        "kernel_modules_glob": "/lib/modules/*sm8150*",
+        "additional_known_packages": [
+          "alsa-ucm-conf-qcom-sm7150",
+          "make-dynpart-mappings",
+          "msm-firmware-loader",
+          "soc-qcom",
+          "soc-qcom-modem",
+          "soc-qcom-qbootctl"
+        ],
+        "uboot": {
+          "repository": "https://gitlab.com/andrewgigena/u-boot.git",
+          "branch": "andrew/google-flame",
+          "device": "sm8150-google-flame",
+          "userdata_blkmap": true,
+          "fastboot_flash_partition": "boot"
+        },
+        "driver_policy": "Reuse Nura/postmarketOS kernel, DTB, modules and firmware; do not create substitute drivers."
+      }
+    }
+  ]
+}
