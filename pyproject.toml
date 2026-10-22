@@ -3,17 +3,18 @@ requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pmbootstrap"
+name = "alarmbootstrap"
 dynamic = ["version"]
 authors = [
   {name = "postmarketOS Developers", email="info@postmarketos.org"}
 ]
-description = "A sophisticated chroot / build / flash tool to develop and install postmarketOS'"
+description = "A device bootstrap, build and flash tool targeting Arch Linux ARM, based on pmbootstrap"
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 requires-python = ">=3.10"
 
 [project.scripts]
+alarmbootstrap = "alarmbootstrap.cli:main"
 pmbootstrap = "pmb:main"
 
 [project.optional-dependencies]
@@ -21,13 +22,19 @@ test = ["pytest"]
 completion = ["argcomplete"]
 
 [project.urls]
-Homepage = "https://www.postmarketos.org"
+Homepage = "https://github.com/ValidityValues/alarmbootstrap"
+Source = "https://github.com/ValidityValues/alarmbootstrap"
 
 [tool.setuptools.dynamic]
 version = {attr =  "pmb.__version__"}
 
 [tool.setuptools.package-dir]
 pmb = "pmb"
+alarmbootstrap = "alarmbootstrap"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pmb*", "alarmbootstrap*"]
 
 [tool.ruff]
 line-length=100
