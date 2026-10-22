@@ -1,0 +1,3 @@
+# SC3043: "In POSIX sh, 'local' is undefined" - busybox sh and pretty much all
+# other shells can handle it though and Alpine uses it too in lots of scripts.
+disable=SC3043

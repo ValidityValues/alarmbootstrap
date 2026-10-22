@@ -1,0 +1,137 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pmbootstrap"
+dynamic = ["version"]
+authors = [
+  {name = "postmarketOS Developers", email="info@postmarketos.org"}
+]
+description = "A sophisticated chroot / build / flash tool to develop and install postmarketOS'"
+readme = "README.md"
+license = {text = "GPL-3.0-or-later"}
+requires-python = ">=3.10"
+
+[project.scripts]
+pmbootstrap = "pmb:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+completion = ["argcomplete"]
+
+[project.urls]
+Homepage = "https://www.postmarketos.org"
+
+[tool.setuptools.dynamic]
+version = {attr =  "pmb.__version__"}
+
+[tool.setuptools.package-dir]
+pmb = "pmb"
+
+[tool.ruff]
+line-length=100
+
+[tool.ruff.lint]
+# mutable-argument-default, function-call-in-default-argument: Occur in many places and aren't trivial to fix.
+# missing-blank-line-after-summary: Not all of our docstrings have a summary yet.
+# DTZ: Require many changes, unsure what the impacts would be.
+# static-join-to-f-string: Questionable whether this actually makes some things more readable.
+# root-logger-call: Would require a lot of changes, might affect the logging output too.
+# try-except-in-loop: Negligible performance improvement on Python 3.11 and newer, and
+#                     not worth the required rework.
+# dict-index-missing-items: Unsure whether this makes some code more readable.
+# non-empty-init-module: Occurs in many places and isn't trivial to fix.
+# hardcoded-temp-file: Hard-coded temp files within chroots should be sufficiently secure.
+# suspicious-subprocess-import: We rely on the subprocess module, can't really avoid it.
+# subprocess-without-shell-equals-true, start-process-with-partial-path: Need more investigation.
+# type-check-without-type-error: Arguable false positives.
+# try-consider-else: Might change functionality in some cases, needs investigation.
+ignore = [
+	"mutable-argument-default",
+	"function-call-in-default-argument",
+	"missing-blank-line-after-summary",
+	"DTZ",
+	"static-join-to-f-string",
+	"root-logger-call",
+	"try-except-in-loop",
+	"dict-index-missing-items",
+	"non-empty-init-module",
+	"hardcoded-temp-file",
+	"suspicious-subprocess-import",
+	"subprocess-without-shell-equals-true",
+	"start-process-with-partial-path",
+	"type-check-without-type-error",
+	"try-consider-else",
+]
+extend-select = ["ARG", "B", "C4", "missing-copyright-notice", "D2", "FURB", "I", "N", "PERF", "PIE", "RUF", "S", "SIM", "UP"]
+preview = true
+
+[tool.ruff.lint.extend-per-file-ignores]
+# blind-except: In this case we do want to handle any exception, no way around it.
+"pmb/__init__.py" = ["blind-except"]
+# suspicious-url-open-usage: May be worth fixing.
+"pmb/helpers/http.py" = ["suspicious-url-open-usage"]
+# blind-except: In this case we do want to handle any exception, no way around it.
+"pmb/helpers/logging.py" = ["blind-except"]
+# suspicious-mktemp-usage: Should be fixed.
+"pmb/install/format.py" = ["suspicious-mktemp-usage"]
+# split-static-string: Makes the test code less readable.
+"test/parse/test_arguments.py" = ["split-static-string"]
+# unused-function-argument: Many tests have unused arguments to ensure context gets set up.
+# assert-false: Tests shouldn't be run with python -O set anyway.
+# assert: Tests should never run with assertions disabled.
+# suspicious-non-cryptographic-random-usage: Tests don't need cryptographically secure randomness.
+"test/*" = ["unused-function-argument", "assert-false", "assert", "suspicious-non-cryptographic-random-usage"]
+# pytest-fixture-autouse: Per the Ruff documentation this is "most problematic" outside conftest.py
+"test/conftest.py" = ["pytest-fixture-autouse"]
+# hardcoded-password-string: In this case we do want a bogus token in the code.
+"test/helpers/test_git.py" = ["hardcoded-password-string"]
+
+[tool.ruff.lint.isort]
+force-wrap-aliases = true
+combine-as-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.format]
+# Enable auto-formatting of code examples in docstrings.
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    "--basetemp=.pytest_tmp"
+]
+norecursedirs = [".*", "dist", "CVS", "_darcs", "{arch}", "*.egg"]
+
+[tool.mypy]
+pretty = true
+
+check_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+local_partial_types = true
+no_implicit_reexport = true
+strict_bytes = true
+strict_equality = true
+strict_equality_for_none = true
+warn_redundant_casts = true
+warn_unreachable = true
+warn_unused_ignores = true
+enable_error_code = [
+    "exhaustive-match",
+    "ignore-without-code",
+    "redundant-expr",
+    "redundant-self",
+    "mutable-override",
+    "possibly-undefined",
+    "truthy-bool",
+    "truthy-iterable",
+    "unimported-reveal",
+    "unused-awaitable",
+    "unused-ignore",
+]

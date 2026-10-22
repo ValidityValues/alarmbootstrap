@@ -1,0 +1,301 @@
+image: alpine:latest
+
+# The mr-settings check needs to run in a MR specific context. With this block,
+# the whole pipeline runs in that context for MRs. Otherwise we would have two
+# pipelines for MRs.
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == 'main'
+    - if: $CI_COMMIT_BRANCH == 'wip'
+    - if: $CI_COMMIT_BRANCH == 'docs'
+
+before_script: &global_before_scripts
+  - ".ci/note.sh"
+  - apk upgrade -U
+  - "adduser -D build"
+  # Force IPv4 for gitlab.postmarketos.org until it supports IPv6 too, OSUOSL is
+  # working on it (infra#195)
+  - "echo '140.211.167.182 gitlab.postmarketos.org' >> /etc/hosts"
+  # python 3.10 tests: need to have tomli installed, see pmb/helpers/toml.py
+  - "if grep -q VERSION_ID=3\\.17 /etc/os-release; then apk add py3-tomli; fi"
+
+stages:
+  - test
+  - deploy
+  - integration-test
+
+codespell:
+  stage: test
+  script:
+    - ".ci/codespell.sh"
+
+markdownlint:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - "**/*.md"
+        - .ci/markdown.sh
+        - .gitlab-ci.yml
+  script:
+    - ".ci/markdown.sh"
+
+pytest:
+  stage: test
+  script:
+    - "apk -q add git android-tools multipath-tools losetup"
+    - "su build -c 'git config --global user.email ci@ci'"
+    - "su build -c 'git config --global user.name CI'"
+    - "echo 'build ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
+    - ".ci/pytest.sh"
+  after_script:
+    - "cp /home/build/.local/var/pmbootstrap/log_testsuite.txt ."
+    - "cp /home/build/.local/var/pmbootstrap/log.txt ."
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    when: always
+    paths:
+      - "log_testsuite.txt"
+      - "log.txt"
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+      junit: junit.xml
+
+# Ensure that tests pass on Python 3.10
+pytest-python3.10:
+  extends: pytest
+  image: alpine:3.17
+
+ruff:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - .ci/ruff.sh
+        - .gitlab-ci.yml
+        - "pmb/**/*.py"
+        - "test/**/*.py"
+        - pmbootstrap.py
+        - pyproject.toml
+  script:
+    - ".ci/ruff.sh"
+
+shellcheck and shfmt:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - "**/*.sh"
+        - .ci/shellcheck_and_shfmt.sh
+        - .gitlab-ci.yml
+        - .shellcheckrc
+  script:
+    - ".ci/shellcheck_and_shfmt.sh"
+
+vermin:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - .ci/vermin.sh
+        - .gitlab-ci.yml
+        - "pmb/**/*.py"
+        - "test/**/*.py"
+        - pmbootstrap.py
+  script:
+    - ".ci/vermin.sh"
+
+mr-settings:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  before_script:
+    - *global_before_scripts
+    - "apk -q add python3"
+    - "wget -q 'https://gitlab.postmarketos.org/postmarketOS/ci-common/-/raw/main/check_mr_settings.py'"
+  script:
+    - "python3 ./check_mr_settings.py"
+
+mypy:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - "**/*.py"
+        - .ci/mypy.sh
+        - .gitlab-ci.yml
+        - pmbootstrap.py
+        - pyproject.toml
+  script:
+    - ".ci/mypy.sh"
+
+docs:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - .ci/docs.sh
+        - .gitlab-ci.yml
+        - docs/**/*
+        - "pmb/**/*.py"
+    - if: $CI_COMMIT_BRANCH == 'main'
+      changes:
+        - .ci/docs.sh
+        - .gitlab-ci.yml
+        - docs/**/*
+        - "pmb/**/*.py"
+  script:
+    - ".ci/docs.sh"
+  artifacts:
+    paths:
+      - public
+
+deploy-docs:
+  stage: deploy
+  trigger:
+    project: postmarketOS/docs.nura.eco
+    strategy: depend
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PROJECT_NAMESPACE == "postmarketOS"
+      changes:
+        - docs/**/*
+        - "pmb/**/*.py"
+
+.integration:
+  stage: integration-test
+  rules:
+  - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    changes:
+      - ".ci/integration_tests/**/*"
+      - "helpers/**/*"
+      - "pmb/**/*"
+      - pmbootstrap.py
+      - .ci/integration.sh
+      - .gitlab-ci.yml
+  before_script:
+    - *global_before_scripts
+    - apk upgrade -U
+    - apk add doas git losetup multipath-tools python3 openssl
+    - echo "permit nopass build" > /etc/doas.d/ci-user.conf
+  # Add built packages as artifacts so they can be inspected if needed.
+  after_script:
+    - mkdir packages
+    - mv /home/build/.local/var/pmbootstrap/packages/* packages/
+  artifacts:
+    paths: [packages]
+    expire_in: 1 week
+
+# Test that we can generate an install rootfs on AMD64 for native
+# and arm64 QEMU targets
+install amd64:
+  extends: .integration
+  tags: [qemu]
+  script:
+  # Native AMD64 on AMD64
+    - .ci/integration_tests/build_images qemu-amd64 console
+  # ARM64 on AMD64
+    - .ci/integration_tests/build_images postmarketos-trailblazer console
+
+# Test that building images works on Python 3.10
+install amd64 python3.10:
+  extends: install amd64
+  image: alpine:3.17
+
+install aarch64:
+  extends: .integration
+  tags: [arm64]
+  script:
+  # Native ARM64 on ARM64
+    - .ci/integration_tests/build_images postmarketos-trailblazer console
+  # AMD64 on ARM64
+  # This is currently broken on the ARM64 runners, see infra#202
+  # so disable it until OSUOSL can fix it.
+    # - .ci/integration_tests/build_images qemu-amd64 console
+
+# Test building with --no-depends
+no_depends build amd64:
+  extends: .integration
+  tags: [qemu]
+  script:
+    - .ci/integration_tests/no_depends_build
+
+# Test building packages with --force on AMD64 for AMD64, aarch64, and armv7
+force build amd64:
+  extends: .integration
+  tags: [qemu]
+  script:
+  # Packages chosen for being small, unlikely to break, and for language coverage.
+  # cross compiling: unnecessary
+    - .ci/integration_tests/force_build x86_64 hello-world
+    - .ci/integration_tests/force_build x86_64 postmarketos-mkinitfs
+  # cross compiling: unnecessary (different arch but no cpu emulation required)
+    - .ci/integration_tests/force_build x86 hello-world
+  # cross compiling: qemu-only
+    - PMB_EXTRA_ARGS="--no-cross" .ci/integration_tests/force_build aarch64 hello-world
+  # cross compiling: crossdirect
+    - .ci/integration_tests/force_build aarch64 hello-world
+    - .ci/integration_tests/force_build armv7 hello-world
+  # cross compiling: cross-native
+    - .ci/integration_tests/force_build aarch64 lk2nd
+    - .ci/integration_tests/force_build armv7 lk2nd
+  # cross compiling: cross-native2
+    - .ci/integration_tests/force_build aarch64 postmarketos-mkinitfs
+    - .ci/integration_tests/force_build armv7 postmarketos-mkinitfs
+
+# Same again but on the arm64 runner
+force build aarch64:
+  extends: .integration
+  tags: [arm64]
+  script:
+  # Packages chosen for being small, unlikely to break, and for language coverage.
+  # The ARM64 runner seems to have QEMU binfmt issues.
+    # - .ci/integration_tests/force_build x86_64 hello-world pbsplash #postmarketos-mkinitfs
+    - .ci/integration_tests/force_build aarch64 hello-world postmarketos-mkinitfs
+    # - .ci/integration_tests/force_build armv7 hello-world postmarketos-mkinitfs
+
+# Test building packages with --lax on AMD64 for ARM64
+# since the cross-build codepath is the more complicated one.
+lax build amd64:
+  extends: .integration
+  tags: [qemu]
+  script:
+  # Packages chosen for being small, unlikely to break, and for language coverage.
+    - .ci/integration_tests/lax_build aarch64 hello-world postmarketos-mkinitfs
+
+# Test building with --force --lax, for diversity run this on the ARM64 runner
+force_lax build aarch64:
+  extends: .integration
+  tags: [arm64]
+  script:
+  # Packages chosen for being small, unlikely to break, and for language coverage.
+  # The ARM64 runner seems to have QEMU binfmt issues.
+    # - .ci/integration_tests/force_lax_build x86_64 hello-world postmarketos-mkinitfs
+    - .ci/integration_tests/force_lax_build aarch64 hello-world postmarketos-mkinitfs
+
+pkgrel_bump amd64:
+  extends: .integration
+  script:
+    - .ci/integration_tests/bump_autobuild qemu-amd64 hello-world
+
+chroot basic:
+  extends: .integration
+  script:
+    - .ci/integration_tests/chroot_basic
+
+inspect initramfs:
+  extends: .integration
+  script:
+    - .ci/integration_tests/inspect_initramfs
+
+newapkbuild:
+  extends: .integration
+  script:
+    - .ci/integration_tests/newapkbuild
+
+parse APKINDEX:
+  extends: .integration
+  script:
+    - .ci/integration_tests/parse_apkindex

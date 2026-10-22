@@ -1,0 +1,77 @@
+# Reference: <https://postmarketos.org/devicepkg>
+# Maintainer: Minecrell <minecrell@minecrell.net>
+# Co-Maintainer: Oliver Smith <ollieparanoid@postmarketos.org>
+pkgname=device-qemu-amd64
+pkgver=6
+pkgrel=3
+pkgdesc="Simulated device in QEMU (x86_64)"
+url="https://postmarketos.org"
+arch="x86_64"
+license="MIT"
+depends="postmarketos-base systemd-boot"
+makedepends="devicepkg-dev"
+# First kernel subpackage is default in pmbootstrap init!
+subpackages="
+        $pkgname-kernel-lts:kernel_lts
+        $pkgname-kernel-virt:kernel_virt
+        $pkgname-kernel-edge:kernel_edge
+        $pkgname-kernel-none:kernel_none
+        $pkgname-mce
+        $pkgname-sway
+        "
+source="
+        deviceinfo
+        modules-initfs
+        mce-display-blanking.conf
+        "
+options="!check !archcheck"
+
+build() {
+        devicepkg_build $startdir $pkgname
+}
+
+package() {
+        devicepkg_package $startdir $pkgname
+}
+
+mce() {
+        pkgdesc="Prevents screen blanking for UI's using mce (Glacier, Asteroid)"
+        install_if="$pkgname=$pkgver-r$pkgrel mce"
+        install -Dm644 "$srcdir"/mce-display-blanking.conf \
+                "$subpkgdir"/etc/mce/50display-blanking.conf
+}
+
+sway() {
+        install_if="$pkgname=$pkgver-r$pkgrel postmarketos-ui-sway"
+        depends="postmarketos-ui-sway-logo-key-alt"
+        mkdir "$subpkgdir"
+}
+
+kernel_none() {
+        pkgdesc="No kernel (does not boot! can be used during pmbootstrap testing to save time)"
+        devicepkg_subpackage_kernel $startdir $pkgname $subpkgname
+}
+
+kernel_virt() {
+        pkgdesc="Alpine Virt kernel (minimal, no audio/mouse/network)"
+        depends="linux-virt"
+        devicepkg_subpackage_kernel $startdir $pkgname $subpkgname
+}
+
+kernel_lts() {
+        pkgdesc="Alpine LTS kernel (recommended)"
+        depends="linux-lts linux-firmware-none"
+        devicepkg_subpackage_kernel $startdir $pkgname $subpkgname
+}
+
+kernel_edge() {
+        pkgdesc="Alpine Edge kernel"
+        depends="linux-edge linux-firmware-none"
+        devicepkg_subpackage_kernel $startdir $pkgname $subpkgname
+}
+
+sha512sums="
+94f8f9ad44ba6ffe55a07a5bce11351f89a7d97e0c52931c573ea21ff7416cc3ede800da94611e04ebfed6914f8d5edb9614f8c0847b53b09ae168a8607f6195  deviceinfo
+29766094e64a7ce881c8e96433203ea538057b8fd1d577fc69b9add6bc1217af04ddf60cbcf82333811c627897eda7537b0b1f862899e1fdfd93403b3f6425d7  modules-initfs
+99d32eed6c5cda59e91516e982c5bd5165ff718133e2411a0dbba04e2057d1dfad49a75e5cc67140d0e0adcbe1383671bd2892335929b782a5b19f5472e635ad  mce-display-blanking.conf
+"

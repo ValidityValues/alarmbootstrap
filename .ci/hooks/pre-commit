@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+DID_FAIL=0
+
+if ! git diff --staged --name-only --diff-filter=ACM | grep -qE '\.py$'; then
+	echo "[pre-commit] No Python files to check."
+	exit 0
+fi
+
+if ! .ci/ruff.sh; then
+	echo "[pre-commit] ruff failed. Fix it with:"
+	echo
+	echo "ruff check --fix && ruff format"
+	exit 1
+fi
