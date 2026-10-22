@@ -23,8 +23,8 @@ from .core import Chroot, Config
 from .core.context import get_context
 from .helpers import logging, mount, other
 
-# pmbootstrap version
-__version__ = "3.12.1"
+# alarmbootstrap version
+__version__ = "0.1.0"
 
 # Python version check
 # === CHECKLIST FOR UPGRADING THE REQUIRED PYTHON VERSION ===
@@ -36,7 +36,7 @@ __version__ = "3.12.1"
 # * when upgrading to python 3.11: pmb/helpers/toml.py and remove this line
 version = sys.version_info
 if version < (3, 10):
-    print("You need at least Python 3.10 to run pmbootstrap")
+    print("You need at least Python 3.10 to run alarmbootstrap")
     print("(You are running it with Python " + str(version.major) + "." + str(version.minor) + ")")
     sys.exit()
 
@@ -47,11 +47,11 @@ def print_log_hint() -> None:
         return
     log = context.log if context else Config().work / "log.txt"
     # Hints about the log file (print to stdout only)
-    log_hint = "Run 'pmbootstrap log' for details."
+    log_hint = "Run 'alarmbootstrap log' for details."
     if not os.path.exists(log):
         log_hint += (
             " Alternatively you can use '--details-to-stdout' to get more"
-            " output, e.g. 'pmbootstrap --details-to-stdout init'."
+            " output, e.g. 'alarmbootstrap --details-to-stdout init'."
         )
     print()
     print(log_hint)
@@ -74,8 +74,8 @@ def main() -> int:
         other.check_grsec()
         if not args.as_root and os.geteuid() == 0:
             raise NonBugError(
-                "Do not run pmbootstrap as root!\n"
-                "If you absolutely must run it as root, use 'pmbootstrap --as-root'"
+                "Do not run alarmbootstrap as root!\n"
+                "If you absolutely must run it as root, use 'alarmbootstrap --as-root'"
             )
 
         # Check for required programs (and find their absolute paths)
@@ -90,19 +90,19 @@ def main() -> int:
                 raise NonBugError(f"Couldn't find file passed with --config: {args.config}")
             old_config = (
                 Path(os.environ.get("XDG_CONFIG_HOME") or os.path.expanduser("~/.config"))
-                / "pmbootstrap.cfg"
+                / "alarmbootstrap.cfg"
             )
             if os.path.exists(old_config):
                 raise NonBugError(
-                    f"Thanks for upgrading to pmbootstrap {__version__}!"
+                    f"Thanks for upgrading to alarmbootstrap {__version__}!"
                     " The config file format has changed, please generate a new config with"
-                    " 'pmbootstrap init'."
+                    " 'alarmbootstrap init'."
                 )
             raise NonBugError(
-                "Run 'pmbootstrap init' first to generate a config file (or use --config)."
+                "Run 'alarmbootstrap init' first to generate a config file (or use --config)."
             )
         elif not os.path.exists(context.config.work):
-            raise NonBugError("Work path not found, please run 'pmbootstrap init' to create it.")
+            raise NonBugError("Work path not found, please run 'alarmbootstrap init' to create it.")
 
         # Migrate work folder if necessary
         if args.action not in ["shutdown", "zap", "log"]:
@@ -112,11 +112,11 @@ def main() -> int:
         if args.action:
             run_command(args)
         else:
-            logging.info("Run pmbootstrap -h for usage information.")
+            logging.info("Run alarmbootstrap -h for usage information.")
 
         # Still active notice
         if mount.ismount(Chroot.native() / "dev"):
-            logging.info("NOTE: chroot is still active (use 'pmbootstrap shutdown' as necessary)")
+            logging.info("NOTE: chroot is still active (use 'alarmbootstrap shutdown' as necessary)")
         logging.info("DONE!")
 
     except KeyboardInterrupt:
@@ -137,11 +137,11 @@ def main() -> int:
         print_log_hint()
         print("""
 This error likely originates from a packaging issue. Please ensure that your
-local pmaports clone is up-to-date with 'pmbootstrap pull'. If the issue still
-persists, try zapping all chroots with 'pmbootstrap zap --all' and try again.
+local pmaports clone is up-to-date with 'alarmbootstrap pull'. If the issue still
+persists, try zapping all chroots with 'alarmbootstrap zap --all' and try again.
 
 Should that still not work, please open an issue in the pmaports (not
-pmbootstrap) issue tracker including the pmbootstrap log.""")
+alarmbootstrap) issue tracker including the alarmbootstrap log.""")
         return 4
 
     except Exception as e:
@@ -159,8 +159,8 @@ pmbootstrap) issue tracker including the pmbootstrap log.""")
 
         print_log_hint()
         print(f"""
-Before you report this error, ensure that pmbootstrap is up to date.
-Find the latest version here: https://gitlab.postmarketos.org/postmarketOS/pmbootstrap/-/tags
+Before you report this error, ensure that alarmbootstrap is up to date.
+Find the latest version here: https://gitlab.postmarketos.org/postmarketOS/alarmbootstrap/-/tags
 Your version: {__version__}""")
         if can_print_status:
             print_status()
