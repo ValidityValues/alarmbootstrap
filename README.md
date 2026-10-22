@@ -1,339 +1,189 @@
-# pmbootstrap
+# alarmbootstrap
 
-Sophisticated chroot/build/flash tool to develop and install
-[postmarketOS](https://postmarketos.org).
+**Arch Linux ARM device bootstrapper based on pmbootstrap.** The first device profile is
+Google Pixel 4 (google-flame), using the existing postmarketOS SM8150 kernel/device stack
+and Andrew Gigena's andrew/google-flame U-Boot branch.
 
-## Development
+> **Development status:** early port. The upstream pmbootstrap codebase and tests are retained,
+> but the Arch Linux ARM backend is being brought up incrementally. A generic AArch64 rootfs
+> is not, by itself, a bootable Pixel 4 image. Do not flash a generated image until the boot path
+> is verified and a recovery plan exists.
 
-Find the location of the upstream repository for pmbootstrap on the
-[postmarketOS homepage](https://postmarketos.org/source-code/).
+## What is included
 
-Run CI scripts locally with:
+- Original pmbootstrap source tree (GPL-3.0-or-later) retained as a compatibility/build base.
+- Native alarmbootstrap command for configuration, Arch Linux ARM rootfs staging, device catalog
+  synchronisation, export and Pixel 4 kernel-artifact staging.
+- Initial google-flame profile referencing existing postmarketOS kernel, firmware and device
+  packages; the project does not attempt to write replacement hardware drivers.
+- Reproducible U-Boot build helper for andrew/google-flame, with flashing disabled by default.
+- Device catalog importer for Nura/postmarketOS pmaports. Existing records are merged instead
+  of silently deleted during future syncs.
 
-```sh
-pmbootstrap ci
-```
-
-Run a single test file:
-
-```sh
-pytest -vv ./test/test_keys.py
-```
-
-## Issues
-
-[Issues are being tracked in the GitLab issue tracker](https://gitlab.postmarketos.org/postmarketOS/pmbootstrap/-/issues).
+The original pmbootstrap commands remain in the source. Commands that do not yet have an
+Arch-native implementation are dispatched to the retained pmbootstrap compatibility layer;
+those legacy actions still require a compatible pmaports/APK environment.
 
 ## Requirements
 
-* Linux distribution on the host system (`x86`, `x86_64`, `aarch64` or `armv7`)
-  * [Windows subsystem for Linux
-    (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) does
-    **not** work! Please use [VirtualBox](https://www.virtualbox.org/) instead.
-  * [Linux kernel 3.17 or higher](https://postmarketos.org/oldkernel)
-  * Note: kernel versions between 5.8.8 and 6.0 might [have issues with
-    parted](https://gitlab.postmarketos.org/postmarketOS/pmbootstrap/-/issues/2309).
-  * /tmp must be mounted with the `exec` flag. Mounting it with `noexec` breaks
-    pmbootstrap. This is chiefly a concern for "hardened" kernels and OS:es. If
-    you insist on having the `noexec` flag set, you can work around this issue
-    by setting the `TMPDIR` environment variable to a directory with the
-    executable flag set, e.g. `TMPDIR=$HOME/.tmp pmbootstrap chroot`.
-* Python 3.10+
-* For python3 < 3.11: tomli
-* OpenSSL
-* git 2.46+
-* kpartx (from multipath-tools)
-* losetup (with --json support, e.g. util-linux version)
-* ps
-* tar
+A Linux host is required. Windows Subsystem for Linux is not recommended for image/loop-device
+work. Install these tools using your distribution's package manager:
 
-## Relation to pmaports
+- Python 3.10 or newer, Git, bsdtar (libarchive), tar, sudo
+- fastboot and Android platform tools for the optional Pixel 4 bootloader step
+- For U-Boot builds: make, an AArch64 cross compiler (aarch64-linux-gnu-gcc), bison,
+  flex, swig, dtc, OpenSSL development headers and the mkbootimg utility
+- At least 4 GiB free space for the downloaded generic AArch64 rootfs; more is recommended
 
-For pmbootstrap to be useful, it needs to maintain a local copy of the
-[pmaports](https://gitlab.postmarketos.org/postmarketOS/pmaports) repository
-where postmarketOS-specific packages are maintained. This is set up
-automatically, but the local copy of pmaports does not automatically get
-updated. To update it, you can run `$ pmbootstrap pull`.
+For cross-architecture chroot operations on an x86_64 host, a working AArch64 binfmt/QEMU
+registration is required. The installer does not silently install or enable a host binfmt handler.
 
-The latest pmbootstrap version works with currently [active postmarketOS
-releases](https://wiki.postmarketos.org/wiki/Releases). Attempting to use
-pmboostrap with old postmarketOS versions (old pmaports branches) may result in
-failures and is not supported. See `pmbootstrap_min_version` in
-[pmaports.cfg](https://wiki.postmarketos.org/wiki/Pmaports.cfg_reference) for
-the oldest supported pmbootstrap version for a given pmaports revision. The
-upper bound is not documented.
+## Install alarmbootstrap
 
-Please note that this compatibility guarantee does not apply to the the pmaports
-testsuite—only the latest pmbootstrap from the "main" branch is guaranteed to
-work with it.
+Clone the repository and install it in an isolated Python environment:
 
-## Usage Examples
+\`\`\`sh
+git clone https://github.com/ValidityValues/alarmbootstrap.git
+cd alarmbootstrap
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e '.[test]'
+alarmbootstrap --help
+\`\`\`
 
-Please refer to the [postmarketOS wiki](https://wiki.postmarketos.org) for
-in-depth coverage of topics such as [porting to a new
-device](https://wiki.postmarketos.org/wiki/Porting_to_a_new_device) or
-[installation](https://wiki.postmarketos.org/wiki/Installation_guide). The help
-output (`pmbootstrap -h`) has detailed usage instructions for every command.
-Read on for some generic examples of what can be done with `pmbootstrap`.
+To run the upstream pmbootstrap test suite, use the upstream CI/dev environment requirements
+and the pmb compatibility code. Not every upstream integration test is expected to pass
+without a local pmaports tree and APK tools.
 
-### Installing pmbootstrap
+## 1. Configure Pixel 4
 
-<https://wiki.nura.eco/wiki/Pmbootstrap/Installation>
+Create the default configuration and working directory:
 
-### Basics
+\`\`\`sh
+alarmbootstrap init --device google-flame
+alarmbootstrap status
+\`\`\`
 
-Initial setup:
+The default work directory is ~/.local/share/alarmbootstrap. Override it with --workdir.
+The configuration file is ~/.config/alarmbootstrap/config.json by default.
 
-```sh
-pmbootstrap init
-```
+## 2. Synchronise the full Nura device catalog
 
-Run this in a second window to see all shell commands that get executed:
+Device metadata and kernel recipes live in pmaports, not in pmbootstrap itself. Synchronise the
+catalog from a local pmaports checkout (recommended), or let the command make a shallow clone:
 
-```sh
-pmbootstrap log
-```
+\`\`\`sh
+git clone --depth=1 https://gitlab.postmarketos.org/postmarketOS/pmaports.git ~/pmaports
+alarmbootstrap devices --sync-nura --ports-dir ~/pmaports
+alarmbootstrap devices
+\`\`\`
 
-Quick health check and config overview:
+The generated catalog is stored in the alarmbootstrap working directory. Existing IDs are
+preserved when the upstream catalog changes; devices removed upstream are marked retired rather
+than discarded. To commit a generated catalog into a checkout, pass --output devices/nura-catalog.json.
 
-```sh
-pmbootstrap status
-```
+## 3. Create an Arch Linux ARM AArch64 rootfs
 
-### Packages
+\`\`\`sh
+alarmbootstrap install
+\`\`\`
 
-Build `aports/main/hello-world`:
+By default this downloads the official generic AArch64 Arch Linux ARM root filesystem and
+extracts it into $WORKDIR/rootfs. The installer checks the published MD5 file for accidental
+download corruption; MD5 is **not** a cryptographic authenticity check. The archive is extracted
+with bsdtar to preserve numeric ownership, ACLs and extended attributes. The command does not
+flash, repartition or write to a connected device.
 
-```sh
-pmbootstrap build hello-world
-```
+Useful options:
 
-Cross-compile to `armhf`:
+\`\`\`sh
+alarmbootstrap install --workdir ~/alarmbootstrap-work
+alarmbootstrap install --url https://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+alarmbootstrap install --force
+\`\`\`
 
-```sh
-pmbootstrap build --arch=armhf hello-world
-```
+--force only replaces the local rootfs directory inside the selected working directory.
+Check that the work directory has enough free space before downloading.
 
-Build with source code from local folder:
+## 4. Reuse the postmarketOS Pixel 4 kernel and drivers
 
-```sh
-pmbootstrap build linux-postmarketos-mainline --src=~/code/linux
-```
+Do **not** replace the SM8150 device stack with a generic kernel when preparing flame.
+Use a working Nura/postmarketOS rootfs that contains the existing kernel package artifacts.
+The current Nura package exposes /boot/linux.efi, /boot/vmlinuz,
+ /boot/dtbs/qcom/sm8150-google-flame.dtb, and /lib/modules/*sm8150*.
 
-Update checksums:
+With a Nura rootfs available, stage the kernel artifacts into the Arch rootfs:
 
-```sh
-pmbootstrap checksum hello-world
-```
+\`\`\`sh
+alarmbootstrap pixel4 stage-kernel --nura-rootfs /path/to/nura-rootfs
+alarmbootstrap pixel4 inspect
+\`\`\`
 
-Generate a template for a new package:
+The command copies the existing EFI kernel, SM8150 DTB, matching modules and the available
+firmware tree; it does not compile new drivers. It keeps the original Arch kernel files and
+places the postmarketOS kernel under a separate name. A kernel/modules mismatch is a hard error.
 
-```sh
-pmbootstrap newapkbuild "https://gitlab.postmarketos.org/postmarketOS/tinydm/-/archive/1.2.0/tinydm-1.2.0.tar.gz"
-```
+Nura's published device package currently depends on the existing linux-postmarketos-qcom-sm8150
+kernel, firmware-google-flame, device-google-flame, and Qualcomm userspace packages. Their
+availability and current paths should be checked before building a final boot image:
+https://pkgs.nura.eco/package/main/postmarketos/aarch64/device-google-flame
 
-#### Default architecture
+## 5. Build U-Boot for Pixel 4
 
-Packages will be compiled for the architecture of the device running pmbootstrap
-by default. For example, if your `x86_64` PC runs pmbootstrap, it would build a
-package for `x86_64` with this command:
+The helper clones the exact branch and applies the userdata blkmap preboot configuration described
+for this device. It builds an Android boot image but does **not** flash it unless --flash is
+passed explicitly.
 
-```sh
-pmbootstrap build hello-world
-```
+\`\`\`sh
+./scripts/build-google-flame-uboot.sh
+\`\`\`
 
-If you would rather build for the target device selected in `pmbootstrap init`
-by default, then use the `build_default_device_arch` option:
+Before attempting any flash, ensure the bootloader is unlocked, save a known-good boot image using
+a method supported by your device, and verify that fastboot detects exactly one device. Only then:
 
-```sh
-pmbootstrap config build_default_device_arch True
-```
+\`\`\`sh
+./scripts/build-google-flame-uboot.sh --flash
+\`\`\`
 
-If your target device is `pine64-pinephone` for example, pmbootstrap will now
-build this package for `aarch64`:
+Flashing U-Boot to boot replaces the current boot partition. The script asks you to type
+FLASH boot and records the image SHA-256, but this is not a substitute for a tested recovery
+path. Do not use flash_rootfs or raw block-device commands on the phone unless you have
+verified the nested-partition layout and the exact destination.
 
-```sh
-pmbootstrap build hello-world
-```
+## 6. Enter and export the staged rootfs
 
-### Chroots
+\`\`\`sh
+alarmbootstrap chroot
+alarmbootstrap export
+\`\`\`
 
-Enter the `armhf` building chroot:
+AArch64 chroot on x86_64 requires QEMU/binfmt configured by the host. Export creates a compressed
+tar archive of the rootfs for inspection or later image-building; it is **not** a ready-to-flash
+Pixel 4 image.
 
-```sh
-pmbootstrap chroot -b armhf
-```
+## Existing pmbootstrap functionality
 
-Run a command inside a chroot:
+The imported upstream pmb/ code retains package-build, chroot, initramfs, image analysis,
+network boot, QEMU, flashing, package and diagnostic commands. Non-native commands are delegated
+to that compatibility implementation. They still depend on the original Alpine/APK/pmaports
+workflow and are not yet equivalent to a fully ported Arch backend. Use them deliberately:
 
-```sh
-pmbootstrap chroot -- echo test
-```
+\`\`\`sh
+alarmbootstrap legacy status
+alarmbootstrap legacy bootimg_analyze /path/to/boot.img
+\`\`\`
 
-Safely delete all chroots:
+The Arch-native commands are init, devices, install, status, chroot, export and pixel4.
+Run alarmbootstrap --help for the up-to-date syntax.
 
-```sh
-pmbootstrap zap
-```
+## Development and tests
 
-### Device Porting Assistance
+\`\`\`sh
+python -m pytest
+python -m compileall -q alarmbootstrap pmb
+\`\`\`
 
-Analyze Android
-[`boot.img`](https://wiki.postmarketos.org/wiki/Glossary#boot.img) files (also
-works with recovery OS images like TWRP):
-
-```sh
-pmbootstrap bootimg_analyze ~/Downloads/twrp-3.2.1-0-fp2.img
-```
-
-Check kernel configs:
-
-```sh
-pmbootstrap kconfig check
-```
-
-Edit a kernel config:
-
-```sh
-pmbootstrap kconfig edit --arch=armhf postmarketos-mainline
-```
-
-### Root File System
-
-Build the rootfs:
-
-```sh
-pmbootstrap install
-```
-
-Build the rootfs with full disk encryption:
-
-```sh
-pmbootstrap install --fde
-```
-
-Update existing installation on SD card:
-
-```sh
-pmbootstrap install --disk=/dev/mmcblk0 --rsync
-```
-
-Run the image in QEMU:
-
-```sh
-pmbootstrap qemu --image-size=1G
-```
-
-Flash to the device:
-
-```sh
-pmbootstrap flasher flash_kernel
-pmbootstrap flasher flash_rootfs --partition=userdata
-```
-
-Export the rootfs, kernel, initramfs, `boot.img` etc.:
-
-```sh
-pmbootstrap export
-```
-
-Extract the initramfs
-
-```sh
-pmbootstrap initfs extract
-```
-
-Build and flash Android recovery zip:
-
-```sh
-pmbootstrap install --android-recovery-zip
-pmbootstrap flasher --method=adb sideload
-```
-
-### Repository Maintenance
-
-List pmaports that don't have a binary package:
-
-```sh
-pmbootstrap repo_missing --arch=armhf --overview
-```
-
-Increase the `pkgrel` for each aport where the binary package has outdated
-dependencies (e.g. after soname bumps):
-
-```sh
-pmbootstrap pkgrel_bump --auto
-```
-
-Generate cross-compiler aports based on the latest version from Alpine's aports:
-
-```sh
-pmbootstrap aportgen gcc-armhf
-```
-
-Manually rebuild package index:
-
-```sh
-pmbootstrap index
-```
-
-Delete local binary packages without existing aport of same version:
-
-```sh
-pmbootstrap zap -m
-```
-
-### Debugging
-
-Use `-v` on any action to get verbose logging:
-
-```sh
-pmbootstrap -v build hello-world
-```
-
-Parse a single APKBUILD and return it as JSON:
-
-```sh
-pmbootstrap apkbuild_parse hello-world
-```
-
-Parse a package from an APKINDEX and return it as JSON:
-
-```sh
-pmbootstrap apkindex_parse $WORK/cache_apk_x86_64/APKINDEX.8b865e19.tar.gz hello-world
-```
-
-`ccache` statistics:
-
-```sh
-pmbootstrap stats --arch=armhf
-```
-
-### Use alternative sudo
-
-See `PMB_SUDO` in `docs/environment_variables.md`.
-
-### Select SSH keys to include and make authorized in new images
-
-If the config file option `ssh_keys` is set to `True` (it defaults to `False`),
-then all files matching the glob `~/.ssh/*.pub` will be placed in
-`~/.ssh/authorized_keys` in the user's home directory in newly-built images.
-
-Sometimes, for example if you have a large number of SSH keys, you may wish to
-select a different set of public keys to include in an image. To do this, set
-the `ssh_key_glob` configuration parameter in the pmbootstrap config file to a
-string containing a glob that is to match the file or files you wish to include.
-
-For example, a `~/.config/pmbootstrap_v3.cfg` may contain:
-
-```ini
-[pmbootstrap]
-# ...
-ssh_keys = True
-ssh_key_glob = ~/.ssh/postmarketos-dev.pub
-# ...
-```
-
-## License
-
-[GPLv3](LICENSE)
+Hardware validation still requires a real Pixel 4. A successful host-side rootfs extraction does
+not prove that U-Boot, EFI, storage, display, touch, Wi-Fi, Bluetooth, audio or GPU acceleration
+work on the phone.
