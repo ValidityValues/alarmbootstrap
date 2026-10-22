@@ -1,6 +1,6 @@
 """Unit tests for the Arch-native alarmbootstrap layer."""
 
-from alarmbootstrap.catalog import merge_catalogs, parse_deviceinfo
+from alarmbootstrap.catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, parse_deviceinfo
 from alarmbootstrap.pixel4 import DEVICE_ID
 from alarmbootstrap.rootfs import DEFAULT_AARCH64_URL
 
@@ -44,3 +44,11 @@ def test_merge_catalog_preserves_removed_ids() -> None:
     assert devices["google-flame"]["profile"] == {"kernel": "sm8150"}
     assert devices["legacy-phone"]["upstream_present"] is False
     assert devices["new-phone"]["upstream_present"] is True
+
+
+def test_catalog_contains_full_nura_id_snapshot() -> None:
+    catalog = load_catalog(BUILTIN_CATALOG)
+    ids = {item["id"] for item in catalog["devices"]}
+    assert len(ids) >= 600
+    assert "google-flame" in ids
+    assert all(item.get("id") for item in catalog["devices"])
