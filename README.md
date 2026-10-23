@@ -114,8 +114,7 @@ Check that the work directory has enough free space before downloading.
 ## 4. Reuse the postmarketOS Pixel 4 kernel and drivers
 
 Do **not** replace the SM8150 device stack with a generic kernel when preparing flame.
-Use a working Nura/postmarketOS rootfs that contains the existing kernel package artifacts.
-The current Nura package exposes `/boot/linux.efi`, `/boot/vmlinuz`,
+The existing Nura kernel package exposes `/boot/linux.efi`, `/boot/vmlinuz`,
 `/boot/dtbs/qcom/sm8150-google-flame.dtb`, and `/lib/modules/*sm8150*`.
 
 You do not need to write any drivers. Build the existing Nura kernel and firmware packages using the imported pmbootstrap compatibility code:
@@ -125,7 +124,7 @@ alarmbootstrap legacy init
 # In the interactive setup, choose the Google Pixel 4 / google-flame device.
 alarmbootstrap legacy build linux-postmarketos-qcom-sm8150
 alarmbootstrap legacy build firmware-google-flame
-find ~/.local/var/pmbootstrap/packages -type f \\
+find ~/.local/var/pmbootstrap/packages -type f \
   \\( -name 'linux-postmarketos-qcom-sm8150-*.apk' -o -name 'firmware-google-flame-*.apk' \\)
 ```
 
@@ -133,8 +132,8 @@ Then provide the built APK artifacts (repeat `--package` for each package). Pack
 to a temporary donor tree, and the existing kernel/DTB/modules/firmware are staged into Arch:
 
 ```sh
-alarmbootstrap pixel4 stage-kernel \\
-  --package /path/to/linux-postmarketos-qcom-sm8150-....apk \\
+alarmbootstrap pixel4 stage-kernel \
+  --package /path/to/linux-postmarketos-qcom-sm8150-....apk \
   --package /path/to/firmware-google-flame-....apk
 alarmbootstrap pixel4 inspect
 ```
@@ -142,10 +141,12 @@ alarmbootstrap pixel4 inspect
 Alternatively, point `--nura-rootfs` at an already-installed Nura rootfs. The staging command copies
 files only; it does not make the embedded Nura initramfs automatically compatible with Arch.
 
-The command copies the existing Nura EFI file as `linux-nura-sm8150.efi` for reference, plus the SM8150 DTB, matching modules and available firmware; it does not compile substitute drivers. It keeps the original Arch kernel files and places the
-postmarketOS kernel under a separate name. A kernel/modules mismatch is a hard error. This is a
-staging step, not proof that the kernel's embedded initramfs or command line can boot the Arch
-rootfs; adapting that boot flow remains a required development task.
+The command copies the existing Nura EFI file as `linux-nura-sm8150.efi` for reference, plus the
+SM8150 DTB, matching modules and available firmware; it does not compile substitute drivers. It
+keeps original Arch kernel files and places the postmarketOS kernel under separate names. A
+kernel/modules mismatch is a hard error. This stages artifacts only; the embedded Nura initramfs
+and command line are not presumed compatible with Arch, and the Arch-specific boot bundle is still
+under development.
 
 Nura's published device package currently depends on the existing linux-postmarketos-qcom-sm8150
 kernel, firmware-google-flame, device-google-flame, and Qualcomm userspace packages. Their
