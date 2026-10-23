@@ -77,3 +77,17 @@ def test_native_device_query_lists_pixel4(capsys) -> None:
     output = capsys.readouterr().out
     assert "Google Pixel 4" in output
     assert "Arch-native priority" in output
+
+
+def test_packaged_catalog_matches_repository_snapshot() -> None:
+    from pathlib import Path
+
+    repository_catalog = Path(__file__).resolve().parents[1] / "devices" / "catalog.json"
+    packaged = load_catalog(BUILTIN_CATALOG)
+    repository = load_catalog(repository_catalog)
+    assert {item["id"] for item in packaged["devices"]} == {
+        item["id"] for item in repository["devices"]
+    }
+    assert next(item for item in packaged["devices"] if item["id"] == "google-flame") == next(
+        item for item in repository["devices"] if item["id"] == "google-flame"
+    )
