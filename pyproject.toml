@@ -142,3 +142,6 @@ enable_error_code = [
     "unused-awaitable",
     "unused-ignore",
 ]
+
+[tool.setuptools.package-data]
+"alarmbootstrap.data" = ["catalog.json"]

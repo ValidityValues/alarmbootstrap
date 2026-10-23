@@ -11,8 +11,7 @@ from pathlib import Path
 from typing import Any
 
 NURA_PORTS_URL = "https://gitlab.postmarketos.org/postmarketOS/pmaports.git"
-REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-BUILTIN_CATALOG = REPOSITORY_ROOT / "devices" / "catalog.json"
+BUILTIN_CATALOG = Path(__file__).resolve().parent / "data" / "catalog.json"
 
 
 def _assignment_value(raw: str) -> str:

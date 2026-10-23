@@ -1,0 +1,6065 @@
+{
+  "schema_version": 1,
+  "source": "https://gitlab.postmarketos.org/postmarketOS/pmaports.git",
+  "source_mirror": "https://github.com/external-mirrors/pmaports",
+  "source_revision": "63713ff744122484552736cb28e6980f6ea0d190",
+  "generated_at": "2026-10-22",
+  "note": "IDs and source paths are included for every deviceinfo entry in the mirrored pmaports tree. Detailed deviceinfo fields are enriched by `alarmbootstrap devices --sync-nura`; built-in non-Pixel profiles are metadata-only until reviewed.",
+  "devices": [
+    {
+      "id": "acer-aspire1",
+      "name": "Acer Aspire1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-acer-aspire1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "acer-picasso",
+      "name": "Acer Picasso",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-acer-picasso/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "acer-swing",
+      "name": "Acer Swing",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-acer-swing/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "acer-t01",
+      "name": "Acer T01",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-acer-t01/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-5010d",
+      "name": "Alcatel 5010d",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-5010d/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-idol3",
+      "name": "Alcatel Idol3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-idol3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-idol347",
+      "name": "Alcatel Idol347",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-idol347/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-idol347-downstream",
+      "name": "Alcatel Idol347 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-idol347-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-pop7lte",
+      "name": "Alcatel Pop7lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-pop7lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "alcatel-ttab",
+      "name": "Alcatel Ttab",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-alcatel-ttab/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-austin",
+      "name": "Amazon Austin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-austin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-biscuit",
+      "name": "Amazon Biscuit",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-biscuit/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-checkers",
+      "name": "Amazon Checkers",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-amazon-checkers/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "amazon-douglas",
+      "name": "Amazon Douglas",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-douglas/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-ford",
+      "name": "Amazon Ford",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-amazon-ford/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "amazon-karnak",
+      "name": "Amazon Karnak",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-karnak/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-mantis",
+      "name": "Amazon Mantis",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-mantis/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-mustang",
+      "name": "Amazon Mustang",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-mustang/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-sheldon",
+      "name": "Amazon Sheldon",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-amazon-sheldon/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "amazon-soho",
+      "name": "Amazon Soho",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-soho/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-suez",
+      "name": "Amazon Suez",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-suez/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-tank",
+      "name": "Amazon Tank",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-tank/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-tate",
+      "name": "Amazon Tate",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-tate/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-thor",
+      "name": "Amazon Thor",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amazon-thor/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amazon-wario",
+      "name": "Amazon Wario",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-amazon-wario/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "amediatech-x96-mini",
+      "name": "Amediatech X96 Mini",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-amediatech-x96-mini/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "amlogic-aarch64-tvbox",
+      "name": "Amlogic Aarch64 Tvbox",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-amlogic-aarch64-tvbox/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "apple-d22",
+      "name": "Apple D22",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-apple-d22/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "apple-idevice",
+      "name": "Apple Idevice",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-apple-idevice/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "apple-iphone7",
+      "name": "Apple Iphone7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-apple-iphone7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "apple-mac-aarch64",
+      "name": "Apple Mac Aarch64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-apple-mac-aarch64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "apple-n61",
+      "name": "Apple N61",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-apple-n61/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "ark-peach",
+      "name": "Ark Peach",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-ark-peach/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "arrow-db410c",
+      "name": "Arrow Db410c",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-arrow-db410c/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "arrow-db820c",
+      "name": "Arrow Db820c",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-arrow-db820c/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-duma",
+      "name": "Asus Duma",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-duma/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-flo",
+      "name": "Asus Flo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-flo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "asus-me176c",
+      "name": "Asus Me176c",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-me176c/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-p024",
+      "name": "Asus P024",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-p024/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-s5507q",
+      "name": "Asus S5507q",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-s5507q/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "asus-sparrow",
+      "name": "Asus Sparrow",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-sparrow/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "asus-sparrow-downstream",
+      "name": "Asus Sparrow Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-sparrow-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-t00f",
+      "name": "Asus T00f",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-t00f/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-x00p",
+      "name": "Asus X00p",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-x00p/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-x00td",
+      "name": "Asus X00td",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-x00td/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "asus-x00td-downstream",
+      "name": "Asus X00td Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-x00td-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-z00l",
+      "name": "Asus Z00l",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-z00l/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-z00t",
+      "name": "Asus Z00t",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-z00t/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-z00vd",
+      "name": "Asus Z00vd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-asus-z00vd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "asus-z010d",
+      "name": "Asus Z010d",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-z010d/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "asus-zenfone3",
+      "name": "Asus Zenfone3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-asus-zenfone3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "ayaneo-pocket-s2",
+      "name": "Ayaneo Pocket S2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-ayaneo-pocket-s2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "ayn-odin",
+      "name": "Ayn Odin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-ayn-odin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "ayn-odin-3",
+      "name": "Ayn Odin 3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-ayn-odin-3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "bananapi-bpi-cm4-cm4io",
+      "name": "Bananapi Bpi Cm4 Cm4io",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-bananapi-bpi-cm4-cm4io/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "bananapi-bpi-m2-zero",
+      "name": "Bananapi Bpi M2 Zero",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bananapi-bpi-m2-zero/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "barnesnoble-encore",
+      "name": "Barnesnoble Encore",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-barnesnoble-encore/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "beelink-gt1",
+      "name": "Beelink Gt1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-beelink-gt1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "blackberry-key2-generic",
+      "name": "Blackberry Key2 Generic",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-blackberry-key2-generic/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "bq-chaozu",
+      "name": "Bq Chaozu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-chaozu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-frieza",
+      "name": "Bq Frieza",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-frieza/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-gohan",
+      "name": "Bq Gohan",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-bq-gohan/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "bq-paella",
+      "name": "Bq Paella",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-paella/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-paella-downstream",
+      "name": "Bq Paella Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-paella-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-piccolo",
+      "name": "Bq Piccolo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-piccolo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-tenshi",
+      "name": "Bq Tenshi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-tenshi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "bq-vegetahd",
+      "name": "Bq Vegetahd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-bq-vegetahd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "clockworkpi-uconsole-radxa-cm5",
+      "name": "Clockworkpi Uconsole Radxa Cm5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-clockworkpi-uconsole-radxa-cm5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "clockworkpi-uconsole-rpi",
+      "name": "Clockworkpi Uconsole Rpi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-clockworkpi-uconsole-rpi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "cubietech-cubieboard",
+      "name": "Cubietech Cubieboard",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-cubietech-cubieboard/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "cutiepi-tablet",
+      "name": "Cutiepi Tablet",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-cutiepi-tablet/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "dell-ariel",
+      "name": "Dell Ariel",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-dell-ariel/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "dongshanpi-nezhastu",
+      "name": "Dongshanpi Nezhastu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-dongshanpi-nezhastu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "epson-embt2ws",
+      "name": "Epson Embt2ws",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-epson-embt2ws/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "essential-mata",
+      "name": "Essential Mata",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-essential-mata/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "fairphone-fp1",
+      "name": "Fairphone Fp1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-fairphone-fp1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "fairphone-fp2",
+      "name": "Fairphone Fp2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-fairphone-fp2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "fairphone-fp2-downstream",
+      "name": "Fairphone Fp2 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-fairphone-fp2-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "fairphone-fp3",
+      "name": "Fairphone Fp3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-fairphone-fp3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "fairphone-fp4",
+      "name": "Fairphone Fp4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-fairphone-fp4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "fairphone-fp5",
+      "name": "Fairphone Fp5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-fairphone-fp5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "fairphone-fp6",
+      "name": "Fairphone Fp6",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-fairphone-fp6/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "finepower-f1",
+      "name": "Finepower F1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-finepower-f1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "fly-iq4404",
+      "name": "Fly Iq4404",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-fly-iq4404/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "fxtec-qx1050",
+      "name": "Fxtec Qx1050",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-fxtec-qx1050/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "generic-loongarch64",
+      "name": "Generic Loongarch64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-generic-loongarch64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "generic-ppc64le",
+      "name": "Generic Ppc64le",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-generic-ppc64le/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "generic-x86_64",
+      "name": "Generic X86_64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-generic-x86_64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "gigaset-gs290",
+      "name": "Gigaset Gs290",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-gigaset-gs290/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "gigaset-gs4",
+      "name": "Gigaset Gs4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-gigaset-gs4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "goclever-gcta741l",
+      "name": "Goclever Gcta741l",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-goclever-gcta741l/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-asurada",
+      "name": "Google Asurada",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-asurada/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-bluejay",
+      "name": "Google Bluejay",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-bluejay/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-blueline",
+      "name": "Google Blueline",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-blueline/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-bonito",
+      "name": "Google Bonito",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-bonito/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-cherry",
+      "name": "Google Cherry",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-cherry/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-corsola",
+      "name": "Google Corsola",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-corsola/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-crosshatch",
+      "name": "Google Crosshatch",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-crosshatch/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-crosshatch-downstream",
+      "name": "Google Crosshatch Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-crosshatch-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-flame",
+      "name": "Google Pixel 4",
+      "manufacturer": "Google",
+      "arch": "aarch64",
+      "source": "device/testing/device-google-flame/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "arch-native-priority",
+      "profile": {
+        "soc": "Qualcomm Snapdragon 855 / SM8150",
+        "kernel_package": "linux-postmarketos-qcom-sm8150",
+        "device_package": "device-google-flame",
+        "firmware_package": "firmware-google-flame",
+        "dtb": "/boot/dtbs/qcom/sm8150-google-flame.dtb",
+        "kernel_efi": "/boot/linux.efi",
+        "kernel_modules_glob": "/lib/modules/*sm8150*",
+        "additional_known_packages": [
+          "alsa-ucm-conf-qcom-sm7150",
+          "make-dynpart-mappings",
+          "msm-firmware-loader",
+          "soc-qcom",
+          "soc-qcom-modem",
+          "soc-qcom-qbootctl"
+        ],
+        "uboot": {
+          "repository": "https://gitlab.com/andrewgigena/u-boot.git",
+          "branch": "andrew/google-flame",
+          "device": "sm8150-google-flame",
+          "userdata_blkmap": true,
+          "fastboot_flash_partition": "boot"
+        },
+        "driver_policy": "Reuse Nura/postmarketOS kernel, DTB, modules and firmware; do not create substitute drivers."
+      }
+    },
+    {
+      "id": "google-glass",
+      "name": "Google Glass",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-glass/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-gru",
+      "name": "Google Gru",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-gru/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-kukui",
+      "name": "Google Kukui",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-kukui/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-manta",
+      "name": "Google Manta",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-manta/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-nyan-big",
+      "name": "Google Nyan Big",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-nyan-big/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-nyan-blaze",
+      "name": "Google Nyan Blaze",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-nyan-blaze/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-oak",
+      "name": "Google Oak",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-oak/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-oriole",
+      "name": "Google Oriole",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-oriole/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-peach-pi",
+      "name": "Google Peach Pi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-peach-pi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-peach-pit",
+      "name": "Google Peach Pit",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-peach-pit/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-raven",
+      "name": "Google Raven",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-raven/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-sargo",
+      "name": "Google Sargo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-sargo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-smaug",
+      "name": "Google Smaug",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-smaug/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-snow",
+      "name": "Google Snow",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-google-snow/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-spring",
+      "name": "Google Spring",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-google-spring/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "google-trogdor",
+      "name": "Google Trogdor",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-trogdor/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-veyron",
+      "name": "Google Veyron",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-veyron/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "google-x64cros",
+      "name": "Google X64cros",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-google-x64cros/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "gp-peak",
+      "name": "Gp Peak",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-gp-peak/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "hisense-m470bsa",
+      "name": "Hisense M470bsa",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-hisense-m470bsa/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "hp-elitebook-ultra-g1q",
+      "name": "Hp Elitebook Ultra G1q",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-hp-elitebook-ultra-g1q/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "htc-a5ul",
+      "name": "Htc A5ul",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-a5ul/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-ace",
+      "name": "Htc Ace",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-ace/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-bravo",
+      "name": "Htc Bravo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-bravo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-enrc2b",
+      "name": "Htc Enrc2b",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-enrc2b/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-evita",
+      "name": "Htc Evita",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-evita/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-flounder",
+      "name": "Htc Flounder",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-flounder/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-flounder-downstream",
+      "name": "Htc Flounder Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-flounder-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-golfu",
+      "name": "Htc Golfu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-htc-golfu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "htc-k2ul",
+      "name": "Htc K2ul",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-k2ul/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-leo",
+      "name": "Htc Leo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-leo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-m7",
+      "name": "Htc M7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-m7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-m8",
+      "name": "Htc M8",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-m8/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-m8-downstream",
+      "name": "Htc M8 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-m8-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-m8qlul",
+      "name": "Htc M8qlul",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-htc-m8qlul/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "htc-memul",
+      "name": "Htc Memul",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-htc-memul/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "htc-memul-downstream",
+      "name": "Htc Memul Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-memul-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-pme",
+      "name": "Htc Pme",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-pme/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-primou",
+      "name": "Htc Primou",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-primou/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-protou",
+      "name": "Htc Protou",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-protou/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-pyramid",
+      "name": "Htc Pyramid",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-pyramid/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-ville",
+      "name": "Htc Ville",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-ville/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-vision",
+      "name": "Htc Vision",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-vision/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "htc-vivo",
+      "name": "Htc Vivo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-htc-vivo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-alice",
+      "name": "Huawei Alice",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-alice/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-angler",
+      "name": "Huawei Angler",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-huawei-angler/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "huawei-angler-downstream",
+      "name": "Huawei Angler Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-angler-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-berlin",
+      "name": "Huawei Berlin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-berlin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-cameron",
+      "name": "Huawei Cameron",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-cameron/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-frd",
+      "name": "Huawei Frd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-frd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-g7",
+      "name": "Huawei G7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-g7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-kiwi",
+      "name": "Huawei Kiwi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-kiwi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-kiwi-downstream",
+      "name": "Huawei Kiwi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-kiwi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-milan",
+      "name": "Huawei Milan",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-huawei-milan/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "huawei-plank",
+      "name": "Huawei Plank",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-plank/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-sturgeon",
+      "name": "Huawei Sturgeon",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-huawei-sturgeon/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "huawei-sturgeon-downstream",
+      "name": "Huawei Sturgeon Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-sturgeon-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-u8825",
+      "name": "Huawei U8825",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-u8825/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-warsaw",
+      "name": "Huawei Warsaw",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-warsaw/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-y530",
+      "name": "Huawei Y530",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-y530/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-y560",
+      "name": "Huawei Y560",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-y560/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "huawei-y635",
+      "name": "Huawei Y635",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-huawei-y635/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "inet-a33",
+      "name": "Inet A33",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-inet-a33/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "infocus-flatfish",
+      "name": "Infocus Flatfish",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-infocus-flatfish/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "jolla-c2",
+      "name": "Jolla C2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-jolla-c2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "jolla-sbj",
+      "name": "Jolla Sbj",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-jolla-sbj/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "khadas-vim3",
+      "name": "Khadas Vim3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-khadas-vim3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "klipad-rel",
+      "name": "Klipad Rel",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-klipad-rel/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "kobo-clara",
+      "name": "Kobo Clara",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-kobo-clara/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "kobo-clara-downstream",
+      "name": "Kobo Clara Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-kobo-clara-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "kobo-clara2e",
+      "name": "Kobo Clara2e",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-kobo-clara2e/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "kobo-librah2o",
+      "name": "Kobo Librah2o",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-kobo-librah2o/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "kobo-nia",
+      "name": "Kobo Nia",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-kobo-nia/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lark-freeme-70-2s",
+      "name": "Lark Freeme 70 2s",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lark-freeme-70-2s/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "leeco-s2",
+      "name": "Leeco S2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-leeco-s2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "leeco-x3",
+      "name": "Leeco X3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-leeco-x3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "leeco-zl1",
+      "name": "Leeco Zl1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-leeco-zl1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-21bx",
+      "name": "Lenovo 21bx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-lenovo-21bx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lenovo-a6000",
+      "name": "Lenovo A6000",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-a6000/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-a6010",
+      "name": "Lenovo A6010",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-a6010/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-a6020a40",
+      "name": "Lenovo A6020a40",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-a6020a40/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-a8-50f",
+      "name": "Lenovo A8 50f",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-a8-50f/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-achilles",
+      "name": "Lenovo Achilles",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-achilles/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-flex-5g",
+      "name": "Lenovo Flex 5g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-flex-5g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-k5fpr",
+      "name": "Lenovo K5fpr",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-k5fpr/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-karate",
+      "name": "Lenovo Karate",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-karate/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-karatep",
+      "name": "Lenovo Karatep",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-karatep/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-kuntao",
+      "name": "Lenovo Kuntao",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-kuntao/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-lxf-p5100",
+      "name": "Lenovo Lxf P5100",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-lxf-p5100/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-manning",
+      "name": "Lenovo Manning",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-manning/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-p1m",
+      "name": "Lenovo P1m",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-p1m/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-q706f",
+      "name": "Lenovo Q706f",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-q706f/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-tb-x704f",
+      "name": "Lenovo Tb X704f",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-tb-x704f/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-tb128fu",
+      "name": "Lenovo Tb128fu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-tb128fu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-tb3-710i",
+      "name": "Lenovo Tb3 710i",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-lenovo-tb3-710i/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lenovo-tb8504f",
+      "name": "Lenovo Tb8504f",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-tb8504f/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-yoga-5g",
+      "name": "Lenovo Yoga 5g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-yoga-5g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lenovo-yoga-c630",
+      "name": "Lenovo Yoga C630",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lenovo-yoga-c630/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-bullhead",
+      "name": "Lg Bullhead",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lg-bullhead/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-bullhead-downstream",
+      "name": "Lg Bullhead Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-bullhead-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-c50",
+      "name": "Lg C50",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-c50/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-d285",
+      "name": "Lg D285",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-d285/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-d722",
+      "name": "Lg D722",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-d722/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-d802",
+      "name": "Lg D802",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-d802/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-d851",
+      "name": "Lg D851",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-d851/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-d855",
+      "name": "Lg D855",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-d855/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-dory",
+      "name": "Lg Dory",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-dory/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-e610",
+      "name": "Lg E610",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-e610/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-elsa",
+      "name": "Lg Elsa",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-lg-elsa/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-h815",
+      "name": "Lg H815",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-h815/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-h815-downstream",
+      "name": "Lg H815 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-h815-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-hammerhead",
+      "name": "Lg Hammerhead",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lg-hammerhead/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-judyln",
+      "name": "Lg Judyln",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lg-judyln/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-judyp",
+      "name": "Lg Judyp",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lg-judyp/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-lenok",
+      "name": "Lg Lenok",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lg-lenok/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-lenok-downstream",
+      "name": "Lg Lenok Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-lenok-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-m216",
+      "name": "Lg M216",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-m216/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-madai",
+      "name": "Lg Madai",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-madai/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-mako",
+      "name": "Lg Mako",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-mako/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-mako-downstream",
+      "name": "Lg Mako Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-mako-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-mmh4x",
+      "name": "Lg Mmh4x",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-mmh4x/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-p700",
+      "name": "Lg P700",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-p700/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-sf340n",
+      "name": "Lg Sf340n",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-sf340n/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-us996",
+      "name": "Lg Us996",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-us996/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-vee3e",
+      "name": "Lg Vee3e",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-lg-vee3e/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lg-vee7e",
+      "name": "Lg Vee7e",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-vee7e/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-w5",
+      "name": "Lg W5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-w5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "lg-w7",
+      "name": "Lg W7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-lg-w7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "librecomputer-lafrite",
+      "name": "Librecomputer Lafrite",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-librecomputer-lafrite/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "librecomputer-lepotato",
+      "name": "Librecomputer Lepotato",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-librecomputer-lepotato/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "librecomputer-solitude",
+      "name": "Librecomputer Solitude",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-librecomputer-solitude/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "linksys-jamaica",
+      "name": "Linksys Jamaica",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-linksys-jamaica/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "linksys-shelby",
+      "name": "Linksys Shelby",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-linksys-shelby/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "lynx-r1",
+      "name": "Lynx R1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-lynx-r1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "mangopi-mq-pro",
+      "name": "Mangopi Mq Pro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-mangopi-mq-pro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "medion-kai",
+      "name": "Medion Kai",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-medion-kai/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "meizu-mblu2",
+      "name": "Meizu Mblu2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-meizu-mblu2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "meizu-turbo",
+      "name": "Meizu Turbo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-meizu-turbo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "microsoft-dempsey",
+      "name": "Microsoft Dempsey",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-microsoft-dempsey/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "microsoft-makepeace",
+      "name": "Microsoft Makepeace",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-microsoft-makepeace/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "microsoft-surface-rt",
+      "name": "Microsoft Surface Rt",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-microsoft-surface-rt/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "mnt-reform2-bpi-cm4",
+      "name": "Mnt Reform2 Bpi Cm4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-mnt-reform2-bpi-cm4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "mobvoi-skipjack",
+      "name": "Mobvoi Skipjack",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-mobvoi-skipjack/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-addison",
+      "name": "Motorola Addison",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-addison/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-athene",
+      "name": "Motorola Athene",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-athene/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-cedric",
+      "name": "Motorola Cedric",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-cedric/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-channel",
+      "name": "Motorola Channel",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-channel/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-condor",
+      "name": "Motorola Condor",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-condor/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-def",
+      "name": "Motorola Def",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-def/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-dubai",
+      "name": "Motorola Dubai",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-motorola-dubai/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "motorola-falcon",
+      "name": "Motorola Falcon",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-falcon/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-falcon-downstream",
+      "name": "Motorola Falcon Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-falcon-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-ghost",
+      "name": "Motorola Ghost",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-ghost/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-harpia",
+      "name": "Motorola Harpia",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-harpia/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-lux",
+      "name": "Motorola Lux",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-lux/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-maserati",
+      "name": "Motorola Maserati",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-maserati/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-nash",
+      "name": "Motorola Nash",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-nash/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-ocean-downstream",
+      "name": "Motorola Ocean Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-ocean-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-odessa",
+      "name": "Motorola Odessa",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-odessa/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-osprey",
+      "name": "Motorola Osprey",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-osprey/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-panelli",
+      "name": "Motorola Panelli",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-panelli/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-payton",
+      "name": "Motorola Payton",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-payton/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-peregrine",
+      "name": "Motorola Peregrine",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-peregrine/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-peregrine-downstream",
+      "name": "Motorola Peregrine Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-peregrine-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-perry",
+      "name": "Motorola Perry",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-perry/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-shamu",
+      "name": "Motorola Shamu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-shamu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-smi",
+      "name": "Motorola Smi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-smi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-surnia",
+      "name": "Motorola Surnia",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-surnia/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-thea",
+      "name": "Motorola Thea",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-thea/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "motorola-titan",
+      "name": "Motorola Titan",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-motorola-titan/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nextbit-robin",
+      "name": "Nextbit Robin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nextbit-robin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nobby-230",
+      "name": "Nobby 230",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-nobby-230/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nokia-ant",
+      "name": "Nokia Ant",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-ant/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-argon",
+      "name": "Nokia Argon",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-argon/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-beatles",
+      "name": "Nokia Beatles",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-beatles/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-fame",
+      "name": "Nokia Fame",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-fame/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-frt",
+      "name": "Nokia Frt",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-frt/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-leo",
+      "name": "Nokia Leo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-leo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-n9",
+      "name": "Nokia N9",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-n9/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-n900",
+      "name": "Nokia N900",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-nokia-n900/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nokia-panther-downstream",
+      "name": "Nokia Panther Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-panther-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-pl2",
+      "name": "Nokia Pl2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-nokia-pl2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nokia-rm885",
+      "name": "Nokia Rm885",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-rm885/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-sand",
+      "name": "Nokia Sand",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-sand/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-sparkler",
+      "name": "Nokia Sparkler",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-sparkler/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nokia-tesla",
+      "name": "Nokia Tesla",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-nokia-tesla/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nokia-weeknd",
+      "name": "Nokia Weeknd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nokia-weeknd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nothing-spacewar",
+      "name": "Nothing Spacewar",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-nothing-spacewar/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nothing-tetris",
+      "name": "Nothing Tetris",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-nothing-tetris/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "nvidia-shieldtablet",
+      "name": "Nvidia Shieldtablet",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-nvidia-shieldtablet/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "nvidia-tegra-armv7",
+      "name": "Nvidia Tegra Armv7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-nvidia-tegra-armv7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "odroid-c2",
+      "name": "Odroid C2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-odroid-c2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "odroid-c4",
+      "name": "Odroid C4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-odroid-c4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "odroid-hc2",
+      "name": "Odroid Hc2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-odroid-hc2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "odroid-n2plus",
+      "name": "Odroid N2plus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-odroid-n2plus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "odroid-u2",
+      "name": "Odroid U2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-odroid-u2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "odroid-xu4",
+      "name": "Odroid Xu4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-odroid-xu4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-bacon",
+      "name": "Oneplus Bacon",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-oneplus-bacon/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-bacon-downstream",
+      "name": "Oneplus Bacon Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-bacon-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-billie2",
+      "name": "Oneplus Billie2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-oneplus-billie2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-billie2-downstream",
+      "name": "Oneplus Billie2 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-billie2-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-cheeseburger",
+      "name": "Oneplus Cheeseburger",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-cheeseburger/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-cheeseburger-downstream",
+      "name": "Oneplus Cheeseburger Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-cheeseburger-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-dumpling",
+      "name": "Oneplus Dumpling",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-dumpling/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-dumpling-downstream",
+      "name": "Oneplus Dumpling Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-dumpling-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-enchilada",
+      "name": "Oneplus Enchilada",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-oneplus-enchilada/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-fajita",
+      "name": "Oneplus Fajita",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-oneplus-fajita/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-guacamole",
+      "name": "Oneplus Guacamole",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-oneplus-guacamole/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-hotdogb",
+      "name": "Oneplus Hotdogb",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-hotdogb/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-instantnoodlep",
+      "name": "Oneplus Instantnoodlep",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-oneplus-instantnoodlep/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-instantnoodlep-downstream",
+      "name": "Oneplus Instantnoodlep Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-instantnoodlep-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-kebab",
+      "name": "Oneplus Kebab",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-oneplus-kebab/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "oneplus-kebab-downstream",
+      "name": "Oneplus Kebab Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-kebab-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-lemonade",
+      "name": "Oneplus Lemonade",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-lemonade/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-lemonadep",
+      "name": "Oneplus Lemonadep",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-lemonadep/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-oneplus2",
+      "name": "Oneplus Oneplus2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-oneplus2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-oneplus3",
+      "name": "Oneplus Oneplus3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-oneplus3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-oneplus3t",
+      "name": "Oneplus Oneplus3t",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-oneplus3t/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oneplus-onyx",
+      "name": "Oneplus Onyx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oneplus-onyx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "oppo-find-7a",
+      "name": "Oppo Find 7a",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-oppo-find-7a/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "ouya-ouya",
+      "name": "Ouya Ouya",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-ouya-ouya/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "ouya-ouya-downstream",
+      "name": "Ouya Ouya Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-ouya-ouya-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-a64lts",
+      "name": "Pine64 A64lts",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pine64-a64lts/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-dontbeevil",
+      "name": "Pine64 Dontbeevil",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pine64-dontbeevil/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-pinebookpro",
+      "name": "Pine64 Pinebookpro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-pine64-pinebookpro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "pine64-pinenote",
+      "name": "Pine64 Pinenote",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-pine64-pinenote/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "pine64-pinephone",
+      "name": "Pine64 Pinephone",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-pine64-pinephone/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "pine64-pinephonepro",
+      "name": "Pine64 Pinephonepro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-pine64-pinephonepro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "pine64-pinetab",
+      "name": "Pine64 Pinetab",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pine64-pinetab/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-pinetab2",
+      "name": "Pine64 Pinetab2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-pine64-pinetab2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "pine64-quartz64",
+      "name": "Pine64 Quartz64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pine64-quartz64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-rock64",
+      "name": "Pine64 Rock64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pine64-rock64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pine64-rockpro64",
+      "name": "Pine64 Rockpro64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-pine64-rockpro64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "planet-geminipda",
+      "name": "Planet Geminipda",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-planet-geminipda/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "pocketbook-614-plus",
+      "name": "Pocketbook 614 Plus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-pocketbook-614-plus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "postmarketos-trailblazer",
+      "name": "Postmarketos Trailblazer",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-postmarketos-trailblazer/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "powkiddy-x55",
+      "name": "Powkiddy X55",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-powkiddy-x55/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "purism-librem5",
+      "name": "Purism Librem5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-purism-librem5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "purism-librem5dev",
+      "name": "Purism Librem5dev",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-purism-librem5dev/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "qcom-msm8226",
+      "name": "Qcom Msm8226",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-msm8226/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-msm8909",
+      "name": "Qcom Msm8909",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-msm8909/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-msm8916",
+      "name": "Qcom Msm8916",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-msm8916/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-msm8953",
+      "name": "Qcom Msm8953",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qcom-msm8953/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-msm8956",
+      "name": "Qcom Msm8956",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-msm8956/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-msm89x7",
+      "name": "Qcom Msm89x7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-msm89x7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-qcs6490",
+      "name": "Qcom Qcs6490",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qcom-qcs6490/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-rbx",
+      "name": "Qcom Rbx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-rbx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-sm7125",
+      "name": "Qcom Sm7125",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qcom-sm7125/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qcom-sm7150",
+      "name": "Qcom Sm7150",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qcom-sm7150/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qemu-aarch64",
+      "name": "Qemu Aarch64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qemu-aarch64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qemu-amd64",
+      "name": "Qemu Amd64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qemu-amd64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qemu-riscv64",
+      "name": "Qemu Riscv64",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-qemu-riscv64/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "qualcomm-sdm845",
+      "name": "Qualcomm Sdm845",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-qualcomm-sdm845/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "radxa-zero",
+      "name": "Radxa Zero",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-radxa-zero/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "raspberry-pi",
+      "name": "Raspberry Pi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-raspberry-pi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "raspberry-pi0",
+      "name": "Raspberry Pi0",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-raspberry-pi0/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "raspberry-pi3",
+      "name": "Raspberry Pi3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-raspberry-pi3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "raspberry-pi4",
+      "name": "Raspberry Pi4",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-raspberry-pi4/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "raspberry-pi5",
+      "name": "Raspberry Pi5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-raspberry-pi5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "realme-porsche",
+      "name": "Realme Porsche",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-realme-porsche/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "realme-rmx1851",
+      "name": "Realme Rmx1851",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-realme-rmx1851/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "realme-rmx2180",
+      "name": "Realme Rmx2180",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-realme-rmx2180/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "realme-x3",
+      "name": "Realme X3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-realme-x3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "rockchip-rk322x",
+      "name": "Rockchip Rk322x",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-rockchip-rk322x/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-a20",
+      "name": "Samsung A20",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a20/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a21s",
+      "name": "Samsung A21s",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-a21s/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-a3",
+      "name": "Samsung A3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a30",
+      "name": "Samsung A30",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a30/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a32",
+      "name": "Samsung A32",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a32/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a3y17lte",
+      "name": "Samsung A3y17lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a3y17lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a40",
+      "name": "Samsung A40",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a40/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a5",
+      "name": "Samsung A5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a50",
+      "name": "Samsung A50",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a50/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a51",
+      "name": "Samsung A51",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a51/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a52sxq",
+      "name": "Samsung A52sxq",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a52sxq/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a53x",
+      "name": "Samsung A53x",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a53x/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a5lte-downstream",
+      "name": "Samsung A5lte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a5lte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a5ulte-downstream",
+      "name": "Samsung A5ulte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a5ulte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a5xelte",
+      "name": "Samsung A5xelte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a5xelte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a5y17lte",
+      "name": "Samsung A5y17lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a5y17lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a6lte",
+      "name": "Samsung A6lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a6lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a6lte-downstream",
+      "name": "Samsung A6lte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a6lte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a6plte",
+      "name": "Samsung A6plte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a6plte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a7",
+      "name": "Samsung A7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-a72q",
+      "name": "Samsung A72q",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-a72q/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-a7y18lte",
+      "name": "Samsung A7y18lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-a7y18lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-afyonltecan",
+      "name": "Samsung Afyonltecan",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-afyonltecan/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-apexq",
+      "name": "Samsung Apexq",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-apexq/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-ariesve",
+      "name": "Samsung Ariesve",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-ariesve/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-arubaslim",
+      "name": "Samsung Arubaslim",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-arubaslim/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-baffinlite",
+      "name": "Samsung Baffinlite",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-baffinlite/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-beyond1lte-downstream",
+      "name": "Samsung Beyond1lte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-beyond1lte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-beyond2lte-downstream",
+      "name": "Samsung Beyond2lte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-beyond2lte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-chagalllte",
+      "name": "Samsung Chagalllte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-chagalllte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-chagallwifi",
+      "name": "Samsung Chagallwifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-chagallwifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-chagallwifi-downstream",
+      "name": "Samsung Chagallwifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-chagallwifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-codina",
+      "name": "Samsung Codina",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-codina/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-codina-tmo",
+      "name": "Samsung Codina Tmo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-codina-tmo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-coreprimeve3g",
+      "name": "Samsung Coreprimeve3g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-coreprimeve3g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-coreprimevelte",
+      "name": "Samsung Coreprimevelte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-samsung-coreprimevelte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-coreprimevelte-downstream",
+      "name": "Samsung Coreprimevelte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-coreprimevelte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-crespo",
+      "name": "Samsung Crespo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-crespo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-crownlte",
+      "name": "Samsung Crownlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-crownlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-d2vzw",
+      "name": "Samsung D2vzw",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-d2vzw/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-degaswifi",
+      "name": "Samsung Degaswifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-degaswifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-dream",
+      "name": "Samsung Dream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-dream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-e7",
+      "name": "Samsung E7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-e7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-espresso10",
+      "name": "Samsung Espresso10",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-samsung-espresso10/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-espresso10-downstream",
+      "name": "Samsung Espresso10 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-espresso10-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-espresso7",
+      "name": "Samsung Espresso7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-samsung-espresso7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-expressatt",
+      "name": "Samsung Expressatt",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-expressatt/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-expressatt-downstream",
+      "name": "Samsung Expressatt Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-expressatt-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-exynos7",
+      "name": "Samsung Exynos7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-exynos7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-exynos9820",
+      "name": "Samsung Exynos9820",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-exynos9820/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-fortuna",
+      "name": "Samsung Fortuna",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-fortuna/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-fortunaltezt",
+      "name": "Samsung Fortunaltezt",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-fortunaltezt/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gavini",
+      "name": "Samsung Gavini",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-gavini/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-golden",
+      "name": "Samsung Golden",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-golden/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-golden-downstream",
+      "name": "Samsung Golden Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-golden-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-goyavewifi",
+      "name": "Samsung Goyavewifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-goyavewifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-goyawifi",
+      "name": "Samsung Goyawifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-goyawifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-grandmax",
+      "name": "Samsung Grandmax",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-grandmax/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-grandpplte",
+      "name": "Samsung Grandpplte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-grandpplte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gt510",
+      "name": "Samsung Gt510",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gt510/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gt58",
+      "name": "Samsung Gt58",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gt58/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gta7litewifi",
+      "name": "Samsung Gta7litewifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gta7litewifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtaxlwifi",
+      "name": "Samsung Gtaxlwifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtaxlwifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtel3g",
+      "name": "Samsung Gtel3g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtel3g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtelwifi",
+      "name": "Samsung Gtelwifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtelwifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtelwifiue",
+      "name": "Samsung Gtelwifiue",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtelwifiue/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtexswifi",
+      "name": "Samsung Gtexswifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtexswifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gtowifi",
+      "name": "Samsung Gtowifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gtowifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gts210lte",
+      "name": "Samsung Gts210lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gts210lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gts210velte",
+      "name": "Samsung Gts210velte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gts210velte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gts210vewifi",
+      "name": "Samsung Gts210vewifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gts210vewifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gts28velte",
+      "name": "Samsung Gts28velte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gts28velte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-gts4lvwifi",
+      "name": "Samsung Gts4lvwifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-gts4lvwifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-heatqlte",
+      "name": "Samsung Heatqlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-heatqlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-hero2lte",
+      "name": "Samsung Hero2lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-hero2lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-herolte",
+      "name": "Samsung Herolte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-herolte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-hlte",
+      "name": "Samsung Hlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-hlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i747m",
+      "name": "Samsung I747m",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i747m/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i8150",
+      "name": "Samsung I8150",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i8150/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i8200",
+      "name": "Samsung I8200",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i8200/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i9003",
+      "name": "Samsung I9003",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i9003/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i9100",
+      "name": "Samsung I9100",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-i9100/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-i9100-downstream",
+      "name": "Samsung I9100 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i9100-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i9100g",
+      "name": "Samsung I9100g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i9100g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i9105p",
+      "name": "Samsung I9105p",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i9105p/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-i927",
+      "name": "Samsung I927",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-i927/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j1mini3g",
+      "name": "Samsung J1mini3g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j1mini3g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j3ltetw",
+      "name": "Samsung J3ltetw",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j3ltetw/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j3xnlte",
+      "name": "Samsung J3xnlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j3xnlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j4lte",
+      "name": "Samsung J4lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-samsung-j4lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-j5",
+      "name": "Samsung J5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j5x",
+      "name": "Samsung J5x",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-j5x/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-j5y17lte",
+      "name": "Samsung J5y17lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j5y17lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j6lte-downstream",
+      "name": "Samsung J6lte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j6lte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j6primelte",
+      "name": "Samsung J6primelte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j6primelte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j7elte",
+      "name": "Samsung J7elte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j7elte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j7eltetmo",
+      "name": "Samsung J7eltetmo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j7eltetmo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j7xelte-downstream",
+      "name": "Samsung J7xelte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j7xelte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j7y17lte",
+      "name": "Samsung J7y17lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j7y17lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-j8y18lte",
+      "name": "Samsung J8y18lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-j8y18lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-jackpotlte",
+      "name": "Samsung Jackpotlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-jackpotlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-janice",
+      "name": "Samsung Janice",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-janice/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-janice-downstream",
+      "name": "Samsung Janice Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-janice-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-jflte",
+      "name": "Samsung Jflte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-jflte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-jfvelte",
+      "name": "Samsung Jfvelte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-jfvelte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-k3gxx",
+      "name": "Samsung K3gxx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-k3gxx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-kccat6",
+      "name": "Samsung Kccat6",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-kccat6/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-kiran",
+      "name": "Samsung Kiran",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-kiran/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-klimtlte",
+      "name": "Samsung Klimtlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-klimtlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-klimtlte-downstream",
+      "name": "Samsung Klimtlte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-klimtlte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-klte",
+      "name": "Samsung Klte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-klte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-klte-downstream",
+      "name": "Samsung Klte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-klte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-kminilte",
+      "name": "Samsung Kminilte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-kminilte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-kona",
+      "name": "Samsung Kona",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-kona/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-kyle",
+      "name": "Samsung Kyle",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-kyle/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-kylepro",
+      "name": "Samsung Kylepro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-kylepro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-kylessopen",
+      "name": "Samsung Kylessopen",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-kylessopen/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-kylevess",
+      "name": "Samsung Kylevess",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-kylevess/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-logands",
+      "name": "Samsung Logands",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-logands/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-loganrelte",
+      "name": "Samsung Loganrelte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-loganrelte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-lt01",
+      "name": "Samsung Lt01",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-lt01/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-lt01wifi-downstream",
+      "name": "Samsung Lt01wifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-lt01wifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-lt023g",
+      "name": "Samsung Lt023g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-lt023g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-lt03lte",
+      "name": "Samsung Lt03lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-lt03lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-m0",
+      "name": "Samsung M0",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-samsung-m0/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-m0-downstream",
+      "name": "Samsung M0 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-m0-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-m20lte",
+      "name": "Samsung M20lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-samsung-m20lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-m3",
+      "name": "Samsung M3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-m3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-maguro",
+      "name": "Samsung Maguro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-maguro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-matisselte",
+      "name": "Samsung Matisselte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-matisselte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-matisseve",
+      "name": "Samsung Matisseve",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-matisseve/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-matissewifi-downstream",
+      "name": "Samsung Matissewifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-matissewifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-milletwifi",
+      "name": "Samsung Milletwifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-milletwifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-ms013g-downstream",
+      "name": "Samsung Ms013g Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-ms013g-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-n1awifi",
+      "name": "Samsung N1awifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-n1awifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-n1awifi-downstream",
+      "name": "Samsung N1awifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-n1awifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-n2awifi",
+      "name": "Samsung N2awifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-n2awifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-n2awifi-downstream",
+      "name": "Samsung N2awifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-n2awifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-nevisp",
+      "name": "Samsung Nevisp",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-nevisp/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-on7",
+      "name": "Samsung On7",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-on7/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-on7xelte-downstream",
+      "name": "Samsung On7xelte Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-on7xelte-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-p4note",
+      "name": "Samsung P4note",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-p4note/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-p4wifi",
+      "name": "Samsung P4wifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-p4wifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-rossa",
+      "name": "Samsung Rossa",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-rossa/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-royss",
+      "name": "Samsung Royss",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-royss/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-s3ve3g",
+      "name": "Samsung S3ve3g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-s3ve3g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-s6500d",
+      "name": "Samsung S6500d",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-s6500d/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-santos10wifi",
+      "name": "Samsung Santos10wifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-santos10wifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-serranodsdd",
+      "name": "Samsung Serranodsdd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-serranodsdd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-serranolte",
+      "name": "Samsung Serranolte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-serranolte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-serranove",
+      "name": "Samsung Serranove",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-serranove/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-skomer",
+      "name": "Samsung Skomer",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-skomer/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-star2lte",
+      "name": "Samsung Star2lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-star2lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-starlte",
+      "name": "Samsung Starlte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-starlte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-starqltechn",
+      "name": "Samsung Starqltechn",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-samsung-starqltechn/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-superior",
+      "name": "Samsung Superior",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-superior/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-t03g",
+      "name": "Samsung T03g",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-t03g/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-t0lte",
+      "name": "Samsung T0lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-t0lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-treltexx",
+      "name": "Samsung Treltexx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-treltexx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-trltexx",
+      "name": "Samsung Trltexx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-trltexx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-v1awifi",
+      "name": "Samsung V1awifi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-samsung-v1awifi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "samsung-v1awifi-downstream",
+      "name": "Samsung V1awifi Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-v1awifi-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-w767",
+      "name": "Samsung W767",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-w767/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-xcover3lte",
+      "name": "Samsung Xcover3lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-xcover3lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-xcover4lte",
+      "name": "Samsung Xcover4lte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-xcover4lte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-zanin",
+      "name": "Samsung Zanin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-zanin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-zerofltexx",
+      "name": "Samsung Zerofltexx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-zerofltexx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "samsung-zeroltexx",
+      "name": "Samsung Zeroltexx",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-samsung-zeroltexx/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "semc-anzu",
+      "name": "Semc Anzu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-semc-anzu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "semc-smultron",
+      "name": "Semc Smultron",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-semc-smultron/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "semc-urushi",
+      "name": "Semc Urushi",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-semc-urushi/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sharp-shl22",
+      "name": "Sharp Shl22",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sharp-shl22/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "shift-axolotl",
+      "name": "Shift Axolotl",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-shift-axolotl/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "shift-axolotl-downstream",
+      "name": "Shift Axolotl Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-shift-axolotl-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "shift-otter",
+      "name": "Shift Otter",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-shift-otter/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sipeed-licheezero",
+      "name": "Sipeed Licheezero",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sipeed-licheezero/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sipeed-m1sdock",
+      "name": "Sipeed M1sdock",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sipeed-m1sdock/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "solidrun-cubox",
+      "name": "Solidrun Cubox",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-solidrun-cubox/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-amami",
+      "name": "Sony Amami",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-amami/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-amami-downstream",
+      "name": "Sony Amami Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-amami-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-aries",
+      "name": "Sony Aries",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-aries/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-castor",
+      "name": "Sony Castor",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-castor/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-coconut",
+      "name": "Sony Coconut",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-coconut/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-eagle",
+      "name": "Sony Eagle",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-eagle/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-falconss",
+      "name": "Sony Falconss",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-falconss/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-hollyss",
+      "name": "Sony Hollyss",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-hollyss/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-honami",
+      "name": "Sony Honami",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-honami/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-ivy",
+      "name": "Sony Ivy",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-ivy/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-leo",
+      "name": "Sony Leo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-sony-leo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-leo-downstream",
+      "name": "Sony Leo Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-leo-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-mango",
+      "name": "Sony Mango",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-mango/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-nicki",
+      "name": "Sony Nicki",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-nicki/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-nicki-downstream",
+      "name": "Sony Nicki Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-nicki-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-pdx215",
+      "name": "Sony Pdx215",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-sony-pdx215/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-pioneer",
+      "name": "Sony Pioneer",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-sony-pioneer/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-redwood",
+      "name": "Sony Redwood",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-sony-redwood/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-scorpion",
+      "name": "Sony Scorpion",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-scorpion/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-seagull",
+      "name": "Sony Seagull",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-seagull/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-sirius",
+      "name": "Sony Sirius",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-sirius/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-sumire",
+      "name": "Sony Sumire",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-sumire/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-suzu",
+      "name": "Sony Suzu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-suzu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-suzuran",
+      "name": "Sony Suzuran",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-suzuran/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-taoshan",
+      "name": "Sony Taoshan",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-taoshan/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-togari",
+      "name": "Sony Togari",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-togari/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-tuba",
+      "name": "Sony Tuba",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-tuba/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-tulip",
+      "name": "Sony Tulip",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-sony-tulip/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "sony-tulip-downstream",
+      "name": "Sony Tulip Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-tulip-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-yuga",
+      "name": "Sony Yuga",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-yuga/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sony-yuga-downstream",
+      "name": "Sony Yuga Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sony-yuga-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sourceparts-pocketpc",
+      "name": "Sourceparts Pocketpc",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-sourceparts-pocketpc/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "sqfmi-beepy",
+      "name": "Sqfmi Beepy",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-sqfmi-beepy/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "starway-andromeda-s8",
+      "name": "Starway Andromeda S8",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-starway-andromeda-s8/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "surftab-wintron7.0",
+      "name": "Surftab Wintron7.0",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-surftab-wintron7.0/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "t2m-flame",
+      "name": "T2m Flame",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-t2m-flame/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "thundercomm-db845c",
+      "name": "Thundercomm Db845c",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-thundercomm-db845c/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "tokio-techbook",
+      "name": "Tokio Techbook",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-tokio-techbook/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "tolino-shine2hd",
+      "name": "Tolino Shine2hd",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-tolino-shine2hd/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "tolino-shine3",
+      "name": "Tolino Shine3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-tolino-shine3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "trekstor-surftabduow1",
+      "name": "Trekstor Surftabduow1",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-trekstor-surftabduow1/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "vernee-k506",
+      "name": "Vernee K506",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-vernee-k506/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "vivo-y21l",
+      "name": "Vivo Y21l",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-vivo-y21l/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "volla-mimameid",
+      "name": "Volla Mimameid",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-volla-mimameid/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "volla-mimameid-downstream",
+      "name": "Volla Mimameid Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-volla-mimameid-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "vsmart-zangyapro",
+      "name": "Vsmart Zangyapro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-vsmart-zangyapro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "wd-glacier",
+      "name": "Wd Glacier",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-wd-glacier/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "wexler-qc750",
+      "name": "Wexler Qc750",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wexler-qc750/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wiko-lenny2",
+      "name": "Wiko Lenny2",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wiko-lenny2/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wiko-lenny3",
+      "name": "Wiko Lenny3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wiko-lenny3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wiko-lenny5",
+      "name": "Wiko Lenny5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wiko-lenny5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wiko-ufeel",
+      "name": "Wiko Ufeel",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wiko-ufeel/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wiko-v12bnlite",
+      "name": "Wiko V12bnlite",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wiko-v12bnlite/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "wileyfox-crackling",
+      "name": "Wileyfox Crackling",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-wileyfox-crackling/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-aries",
+      "name": "Xiaomi Aries",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-aries/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-armani",
+      "name": "Xiaomi Armani",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-armani/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-begonia",
+      "name": "Xiaomi Begonia",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-begonia/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-begonia-downstream",
+      "name": "Xiaomi Begonia Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-begonia-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-beryllium",
+      "name": "Xiaomi Beryllium",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/community/device-xiaomi-beryllium/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-cactus",
+      "name": "Xiaomi Cactus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-cactus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-cancro",
+      "name": "Xiaomi Cancro",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-cancro/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-cepheus",
+      "name": "Xiaomi Cepheus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-cepheus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-cepheus-downstream",
+      "name": "Xiaomi Cepheus Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-cepheus-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-cereus",
+      "name": "Xiaomi Cereus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-cereus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-clover",
+      "name": "Xiaomi Clover",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-clover/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-daisy",
+      "name": "Xiaomi Daisy",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-daisy/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-dior",
+      "name": "Xiaomi Dior",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-dior/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-elish",
+      "name": "Xiaomi Elish",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-elish/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-equuleus",
+      "name": "Xiaomi Equuleus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-equuleus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-ferrari",
+      "name": "Xiaomi Ferrari",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-ferrari/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-fire",
+      "name": "Xiaomi Fire",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-fire/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-fog",
+      "name": "Xiaomi Fog",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-fog/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-gauguin",
+      "name": "Xiaomi Gauguin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-gauguin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-gemini",
+      "name": "Xiaomi Gemini",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-gemini/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-ginkgo",
+      "name": "Xiaomi Ginkgo",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-ginkgo/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-ido",
+      "name": "Xiaomi Ido",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-xiaomi-ido/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-jasmine_sprout",
+      "name": "Xiaomi Jasmine_sprout",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-jasmine_sprout/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-kenzo-downstream",
+      "name": "Xiaomi Kenzo Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-kenzo-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-lancelot",
+      "name": "Xiaomi Lancelot",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-lancelot/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-latte",
+      "name": "Xiaomi Latte",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-latte/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-laurel",
+      "name": "Xiaomi Laurel",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-laurel/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-lavender",
+      "name": "Xiaomi Lavender",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-lavender/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-lavender-downstream",
+      "name": "Xiaomi Lavender Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-lavender-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-libra",
+      "name": "Xiaomi Libra",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-libra/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-markw",
+      "name": "Xiaomi Markw",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-markw/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-merlin",
+      "name": "Xiaomi Merlin",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-merlin/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-miatoll",
+      "name": "Xiaomi Miatoll",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-miatoll/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-mido",
+      "name": "Xiaomi Mido",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-mido/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-mocha",
+      "name": "Xiaomi Mocha",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-mocha/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-monet",
+      "name": "Xiaomi Monet",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/downstream/device-xiaomi-monet/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-nabu",
+      "name": "Xiaomi Nabu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-nabu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-natrium",
+      "name": "Xiaomi Natrium",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-natrium/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-olive",
+      "name": "Xiaomi Olive",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-olive/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-onclite",
+      "name": "Xiaomi Onclite",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-onclite/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-perseus",
+      "name": "Xiaomi Perseus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-perseus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-pine",
+      "name": "Xiaomi Pine",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-pine/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-pipa",
+      "name": "Xiaomi Pipa",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-pipa/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-platina",
+      "name": "Xiaomi Platina",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-platina/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-platina-downstream",
+      "name": "Xiaomi Platina Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-platina-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-polaris",
+      "name": "Xiaomi Polaris",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-polaris/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-pyxis",
+      "name": "Xiaomi Pyxis",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-pyxis/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-raphael",
+      "name": "Xiaomi Raphael",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-raphael/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-rosemary-downstream",
+      "name": "Xiaomi Rosemary Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-rosemary-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-rosy",
+      "name": "Xiaomi Rosy",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-rosy/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-sagit",
+      "name": "Xiaomi Sagit",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-sagit/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-scorpio",
+      "name": "Xiaomi Scorpio",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-scorpio/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-spes",
+      "name": "Xiaomi Spes",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-spes/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-tissot",
+      "name": "Xiaomi Tissot",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-tissot/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-tulip",
+      "name": "Xiaomi Tulip",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-tulip/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-vayu",
+      "name": "Xiaomi Vayu",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-vayu/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-vince",
+      "name": "Xiaomi Vince",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-vince/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-whyred",
+      "name": "Xiaomi Whyred",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-whyred/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-willow",
+      "name": "Xiaomi Willow",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xiaomi-willow/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xiaomi-wt88047",
+      "name": "Xiaomi Wt88047",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-wt88047/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-wt88047-downstream",
+      "name": "Xiaomi Wt88047 Downstream",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-wt88047-downstream/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xiaomi-ysl",
+      "name": "Xiaomi Ysl",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xiaomi-ysl/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xunlong-orangepi-pc",
+      "name": "Xunlong Orangepi Pc",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xunlong-orangepi-pc/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xunlong-orangepi-zero3",
+      "name": "Xunlong Orangepi Zero3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xunlong-orangepi-zero3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "xunlong-orangepi3",
+      "name": "Xunlong Orangepi3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-xunlong-orangepi3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "xunlong-orangepi5-plus",
+      "name": "Xunlong Orangepi5 Plus",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-xunlong-orangepi5-plus/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "yu-tomato",
+      "name": "Yu Tomato",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-yu-tomato/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "zhihe-generic",
+      "name": "Zhihe Generic",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-zhihe-generic/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "zte-b860hv5",
+      "name": "Zte B860hv5",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/testing/device-zte-b860hv5/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only"
+    },
+    {
+      "id": "zte-kis3",
+      "name": "Zte Kis3",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-zte-kis3/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "zte-p450f10",
+      "name": "Zte P450f10",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-zte-p450f10/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "zte-p731a20",
+      "name": "Zte P731a20",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-zte-p731a20/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "zte-v0720",
+      "name": "Zte V0720",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-zte-v0720/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    },
+    {
+      "id": "zuk-z2-row",
+      "name": "Zuk Z2 Row",
+      "manufacturer": "",
+      "arch": "unknown",
+      "source": "device/archived/device-zuk-z2-row/deviceinfo",
+      "upstream_present": true,
+      "catalog_status": "metadata-only-archived"
+    }
+  ]
+}
