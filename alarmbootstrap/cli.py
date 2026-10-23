@@ -5,8 +5,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import platform
-import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -14,6 +12,7 @@ from typing import Any, Sequence
 
 from . import __version__
 from .catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, sync_nura_catalog
+from .chroot import run_in_rootfs
 from .pixel4 import (
     Pixel4Error,
     inspect_rootfs,
@@ -149,35 +148,6 @@ def _device_catalog(workdir: Path) -> dict[str, Any]:
     return merge_catalogs(builtin, {item["id"]: item for item in synced["devices"]})
 
 
-def _run_chroot(rootfs: Path, requested: list[str]) -> int:
-    if platform.machine().lower() not in {"aarch64", "arm64"}:
-        handler = Path("/proc/sys/fs/binfmt_misc/qemu-aarch64")
-        if not handler.exists():
-            raise RuntimeError(
-                "Cross-architecture chroot requires a registered qemu-aarch64 binfmt handler. "
-                "Configure host QEMU/binfmt first; alarmbootstrap will not change host binfmt."
-            )
-
-    command = requested or ["/bin/bash"]
-    if command and command[0] == "--":
-        command = command[1:]
-    if not command:
-        command = ["/bin/bash"]
-
-    bind_sources = ["/dev", "/proc", "/sys"]
-    mounted: list[Path] = []
-    try:
-        for source in bind_sources:
-            target = rootfs / source.lstrip("/")
-            subprocess.run(root_command(["mkdir", "-p", str(target)]), check=True)
-            subprocess.run(root_command(["mount", "--rbind", source, str(target)]), check=True)
-            mounted.append(target)
-        return subprocess.run(root_command(["chroot", str(rootfs), *command]), check=False).returncode
-    finally:
-        for target in reversed(mounted):
-            subprocess.run(root_command(["umount", "-R", str(target)]), check=False)
-
-
 def main(argv: list[str] | None = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     if not argv:
@@ -262,7 +232,7 @@ def main(argv: list[str] | None = None) -> int:
             rootfs = workdir / "rootfs"
             if not (rootfs / "usr/bin/pacman").is_file():
                 raise RuntimeError(f"Arch rootfs is missing: {rootfs}. Run alarmbootstrap install first.")
-            return _run_chroot(rootfs, args.command)
+            return run_in_rootfs(rootfs, args.command)
 
         if args.action == "export":
             rootfs = workdir / "rootfs"
