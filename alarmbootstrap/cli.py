@@ -14,7 +14,13 @@ from typing import Any, Sequence
 
 from . import __version__
 from .catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, sync_nura_catalog
-from .pixel4 import Pixel4Error, inspect_rootfs, run_uboot_build, stage_kernel
+from .pixel4 import (
+    Pixel4Error,
+    inspect_rootfs,
+    run_uboot_build,
+    stage_kernel,
+    unpack_nura_packages,
+)
 from .rootfs import DEFAULT_AARCH64_URL, RootfsError, install_rootfs, root_command
 
 NATIVE_ACTIONS = {"init", "devices", "install", "status", "chroot", "export", "pixel4"}
@@ -86,7 +92,12 @@ def _parser() -> argparse.ArgumentParser:
     pixel4 = subs.add_parser("pixel4", help="Google Pixel 4 (google-flame) utilities")
     pixel_sub = pixel4.add_subparsers(dest="pixel_action", required=True)
     stage = pixel_sub.add_parser("stage-kernel", help="reuse the existing Nura SM8150 kernel stack")
-    stage.add_argument("--nura-rootfs", type=Path, required=True)
+    stage_source = stage.add_mutually_exclusive_group(required=True)
+    stage_source.add_argument("--nura-rootfs", type=Path, help="existing Nura rootfs directory")
+    stage_source.add_argument(
+        "--package", dest="nura_packages", type=Path, action="append",
+        help="Nura .apk artifact to extract (repeat for kernel and firmware packages)",
+    )
     stage.add_argument("--workdir", type=Path, default=None)
     inspect = pixel_sub.add_parser("inspect", help="check staged Pixel 4 artifacts")
     inspect.add_argument("--workdir", type=Path, default=None)
@@ -275,7 +286,13 @@ def main(argv: list[str] | None = None) -> int:
         if args.action == "pixel4":
             rootfs = workdir / "rootfs"
             if args.pixel_action == "stage-kernel":
-                copied = stage_kernel(args.nura_rootfs, rootfs)
+                if args.nura_rootfs is not None:
+                    nura_source = args.nura_rootfs
+                else:
+                    nura_source = unpack_nura_packages(
+                        args.nura_packages, workdir / "nura-package-staging"
+                    )
+                copied = stage_kernel(nura_source, rootfs)
                 print("Reused existing Nura/postmarketOS SM8150 kernel stack:")
                 for item in copied:
                     print(f"  {item}")
