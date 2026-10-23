@@ -125,8 +125,7 @@ alarmbootstrap pixel4 stage-kernel --nura-rootfs /path/to/nura-rootfs
 alarmbootstrap pixel4 inspect
 ```
 
-The command copies the existing EFI kernel, SM8150 DTB, matching modules and available firmware;
-it does not compile substitute drivers. It keeps the original Arch kernel files and places the
+The command copies the existing Nura EFI file as `linux-nura-sm8150.efi` for reference, plus the SM8150 DTB, matching modules and available firmware; it does not compile substitute drivers. It keeps the original Arch kernel files and places the
 postmarketOS kernel under a separate name. A kernel/modules mismatch is a hard error. This is a
 staging step, not proof that the kernel's embedded initramfs or command line can boot the Arch
 rootfs; adapting that boot flow remains a required development task.
