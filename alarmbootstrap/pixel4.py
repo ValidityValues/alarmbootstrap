@@ -55,7 +55,7 @@ def stage_kernel(nura_rootfs: Path, arch_rootfs: Path) -> list[Path]:
         raise Pixel4Error(f"No firmware directory found in the Nura rootfs: {source}")
 
     copies: list[tuple[Path, Path]] = [
-        (source / "boot/linux.efi", target / "boot/alarmbootstrap-sm8150.efi"),
+        (source / "boot/linux.efi", target / "boot/linux-nura-sm8150.efi"),
         (source / DTB_RELATIVE, target / DTB_RELATIVE),
         (module_dirs[0], target / "lib/modules" / module_dirs[0].name),
     ]
@@ -86,7 +86,7 @@ def inspect_rootfs(rootfs: Path) -> dict[str, object]:
     rootfs = rootfs.expanduser().resolve()
     checks = {
         "Arch Linux ARM rootfs": (rootfs / "usr/bin/pacman").is_file(),
-        "Nura SM8150 EFI kernel": (rootfs / "boot/alarmbootstrap-sm8150.efi").is_file(),
+        "Nura EFI reference kernel": (rootfs / "boot/linux-nura-sm8150.efi").is_file(),
         "Pixel 4 DTB": (rootfs / DTB_RELATIVE).is_file(),
     }
     modules = [
@@ -95,11 +95,19 @@ def inspect_rootfs(rootfs: Path) -> dict[str, object]:
     ] if (rootfs / "lib/modules").is_dir() else []
     checks["SM8150 kernel modules"] = len(modules) == 1
     checks["firmware directory"] = (rootfs / "lib/firmware").is_dir()
+    artifact_checks = {key: value for key, value in checks.items()}
+    artifact_staging_complete = all(artifact_checks.values())
     return {
         "rootfs": str(rootfs),
         "checks": checks,
         "module_releases": modules,
-        "ready_for_hardware_test": all(checks.values()),
+        "artifact_staging_complete": artifact_staging_complete,
+        "boot_path_complete": False,
+        "boot_path_blockers": [
+            "An Arch-compatible initramfs/UKI has not been generated.",
+            "No verified root partition image or root identifier has been configured.",
+            "The copied Nura EFI file is retained for inspection, not treated as an Arch boot image.",
+        ],
     }
 
 
