@@ -2,11 +2,18 @@
 
 from __future__ import annotations
 
+import json
+import math
+import os
+import re
 import shutil
 import subprocess
+import tempfile
+import time
 from pathlib import Path
 
-from .rootfs import root_command
+from .chroot import run_in_rootfs
+from .rootfs import RootfsError, root_command
 
 DEVICE_ID = "google-flame"
 KERNEL_PACKAGE = "linux-postmarketos-qcom-sm8150"
@@ -148,6 +155,219 @@ def inspect_rootfs(rootfs: Path) -> dict[str, object]:
             "The copied Nura EFI file is retained for inspection, not treated as an Arch boot image.",
         ],
     }
+
+
+def build_efi(rootfs: Path, root_label: str = "ALARMROOT") -> Path:
+    """Generate an Arch-compatible initramfs and ARM64 UKI with the existing Nura kernel."""
+    rootfs = rootfs.expanduser().resolve()
+    if not re.fullmatch(r"[A-Za-z0-9._-]{1,32}", root_label):
+        raise Pixel4Error("Root label must use only letters, digits, dot, underscore or hyphen (max 32 chars).")
+    if not (rootfs / "usr/bin/pacman").is_file():
+        raise Pixel4Error(f"Arch Linux ARM rootfs not found: {rootfs}")
+    kernel = rootfs / "boot/vmlinuz-postmarketos-sm8150"
+    dtb = rootfs / DTB_RELATIVE
+    if not kernel.is_file() or not dtb.is_file():
+        raise Pixel4Error("Stage the existing Nura kernel and DTB before running pixel4 build-efi.")
+
+    module_dirs = sorted(
+        path for path in (rootfs / "lib/modules").glob("*sm8150*")
+        if path.is_dir() and (path / "modules.dep").is_file()
+    ) if (rootfs / "lib/modules").is_dir() else []
+    if len(module_dirs) != 1:
+        raise Pixel4Error("Expected exactly one staged SM8150 modules directory with modules.dep.")
+    kernel_release = module_dirs[0].name
+    if not re.fullmatch(r"[A-Za-z0-9._+-]{1,128}", kernel_release):
+        raise Pixel4Error(f"Unexpected kernel release directory name: {kernel_release!r}")
+
+    script = r"""set -Eeuo pipefail
+kernel_release="$1"
+root_label="$2"
+
+# Initialize the generic Arch Linux ARM keyring using the official instructions,
+# then update userspace and install the tools used to build an initramfs/UKI.
+pacman-key --init
+pacman -Sy --noconfirm archlinuxarm-keyring
+pacman-key --populate archlinuxarm
+pacman -Syu --noconfirm --needed mkinitcpio systemd-ukify binutils
+
+cat > /etc/mkinitcpio-alarmbootstrap.conf <<'EOF'
+MODULES=()
+BINARIES=()
+FILES=()
+HOOKS=(base udev modconf block filesystems fsck)
+COMPRESSION="zstd"
+EOF
+
+mkinitcpio -c /etc/mkinitcpio-alarmbootstrap.conf \
+    -k "$kernel_release" -g /boot/initramfs-alarmbootstrap-sm8150.img
+
+mkdir -p /boot/EFI/BOOT
+ukify build \
+    --linux=/boot/vmlinuz-postmarketos-sm8150 \
+    --initrd=/boot/initramfs-alarmbootstrap-sm8150.img \
+    --cmdline="root=LABEL=$root_label rw rootwait rootfstype=ext4" \
+    --os-release=@/etc/os-release \
+    --devicetree=/boot/dtbs/qcom/sm8150-google-flame.dtb \
+    --output=/boot/EFI/BOOT/BOOTAA64.EFI
+"""
+    status = run_in_rootfs(
+        rootfs,
+        ["/bin/bash", "-euc", script, "alarmbootstrap-build-efi", kernel_release, root_label],
+    )
+    if status:
+        raise Pixel4Error(
+            f"Building the Arch initramfs/UKI failed inside the rootfs (exit {status}). "
+            "Inspect the chroot output and rootfs package/keyring configuration."
+        )
+
+    uki = rootfs / "boot/EFI/BOOT/BOOTAA64.EFI"
+    initramfs = rootfs / "boot/initramfs-alarmbootstrap-sm8150.img"
+    if not uki.is_file() or not initramfs.is_file():
+        raise Pixel4Error("The UKI build returned success but did not produce the expected files.")
+
+    metadata = {
+        "device": DEVICE_ID,
+        "kernel_release": kernel_release,
+        "kernel": "/boot/vmlinuz-postmarketos-sm8150",
+        "dtb": str(DTB_RELATIVE),
+        "initramfs": "/boot/initramfs-alarmbootstrap-sm8150.img",
+        "uki": "/boot/EFI/BOOT/BOOTAA64.EFI",
+        "root_label": root_label,
+        "root_filesystem": "ext4",
+        "kernel_command_line": f"root=LABEL={root_label} rw rootwait rootfstype=ext4",
+        "note": "Generated host-side; this does not prove boot on the physical device.",
+    }
+    data = json.dumps(metadata, indent=2) + "\n"
+    subprocess.run(
+        root_command(["tee", str(rootfs / "boot/alarmbootstrap-boot.json")]),
+        input=data,
+        text=True,
+        check=True,
+        stdout=subprocess.DEVNULL,
+    )
+    subprocess.run(
+        root_command(["chmod", "0644", str(rootfs / "boot/alarmbootstrap-boot.json")]),
+        check=True,
+    )
+    return uki
+
+
+def build_disk_image(
+    rootfs: Path,
+    destination: Path,
+    *,
+    esp_mib: int = 512,
+    force: bool = False,
+) -> Path:
+    """Create a nested GPT image with a FAT EFI partition and ext4 Arch root partition."""
+    rootfs = rootfs.expanduser().resolve()
+    destination = destination.expanduser().resolve()
+    if destination.is_symlink():
+        raise Pixel4Error(f"Refusing to replace a symlink: {destination}")
+    if destination.exists() and not force:
+        raise Pixel4Error(f"Image already exists: {destination}. Use --force to replace this image.")
+    if destination == rootfs or rootfs in destination.parents:
+        raise Pixel4Error("Image output must be outside the rootfs directory.")
+    if not (rootfs / "usr/bin/pacman").is_file():
+        raise Pixel4Error(f"Arch Linux ARM rootfs not found: {rootfs}")
+
+    uki = rootfs / "boot/EFI/BOOT/BOOTAA64.EFI"
+    metadata_path = rootfs / "boot/alarmbootstrap-boot.json"
+    if not uki.is_file() or not metadata_path.is_file():
+        raise Pixel4Error("Run alarmbootstrap pixel4 build-efi before building the disk image.")
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    root_label = metadata.get("root_label")
+    if not isinstance(root_label, str) or not re.fullmatch(r"[A-Za-z0-9._-]{1,32}", root_label):
+        raise Pixel4Error("Invalid root label in boot metadata.")
+
+    for tool in ("sgdisk", "mkfs.fat", "mkfs.ext4", "losetup", "mount", "umount", "truncate"):
+        if shutil.which(tool) is None:
+            raise Pixel4Error(f"Missing image-building tool: {tool}")
+
+    root_bytes = sum(
+        path.stat().st_size
+        for path in rootfs.rglob("*")
+        if path.is_file() and not path.is_symlink()
+    )
+    root_mib = max(2048, math.ceil((root_bytes * 1.30 + 512 * 1024**2) / 1024**2))
+    if esp_mib < 128 or esp_mib > 2048:
+        raise Pixel4Error("EFI partition size must be between 128 and 2048 MiB.")
+    total_mib = esp_mib + root_mib + 16
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if shutil.disk_usage(destination.parent).free < total_mib * 1024**2:
+        raise Pixel4Error(
+            f"Building this image needs about {total_mib} MiB free in {destination.parent}."
+        )
+
+    fd, temporary_name = tempfile.mkstemp(
+        prefix=destination.name + ".", suffix=".tmp", dir=destination.parent
+    )
+    os.close(fd)
+    temporary_image = Path(temporary_name)
+    loop_device = ""
+    mountpoint = ""
+    mounted = False
+    try:
+        subprocess.run(["truncate", "-s", str(total_mib * 1024**2), str(temporary_image)], check=True)
+        subprocess.run(
+            [
+                "sgdisk", "--clear",
+                "--new=1:2048:+" + str(esp_mib) + "M",
+                "--typecode=1:ef00", "--change-name=1:ALARMBOOT",
+                "--new=2:0:0", "--typecode=2:8300", "--change-name=2:ALARMROOT",
+                str(temporary_image),
+            ],
+            check=True,
+        )
+        attach = subprocess.run(
+            root_command(["losetup", "--find", "--show", "--partscan", str(temporary_image)]),
+            check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+        )
+        loop_device = attach.stdout.strip()
+        if not loop_device.startswith("/dev/loop"):
+            raise Pixel4Error(f"Unexpected loop device returned by losetup: {loop_device!r}")
+        if shutil.which("udevadm"):
+            subprocess.run(root_command(["udevadm", "settle"]), check=False)
+
+        efi_partition = loop_device + "p1"
+        root_partition = loop_device + "p2"
+        for _ in range(50):
+            if Path(efi_partition).exists() and Path(root_partition).exists():
+                break
+            time.sleep(0.1)
+        if not Path(efi_partition).exists() or not Path(root_partition).exists():
+            raise Pixel4Error("Kernel did not expose the image's loop partition devices.")
+
+        subprocess.run(root_command(["mkfs.fat", "-F", "32", "-n", "ALARMBOOT", efi_partition]), check=True)
+        subprocess.run(
+            root_command(["mkfs.ext4", "-F", "-L", root_label, "-d", str(rootfs), root_partition]),
+            check=True,
+        )
+
+        with tempfile.TemporaryDirectory(prefix="alarmbootstrap-esp-") as temp_mount:
+            mountpoint = temp_mount
+            subprocess.run(root_command(["mount", efi_partition, mountpoint]), check=True)
+            mounted = True
+            efi_dir = Path(mountpoint) / "EFI" / "BOOT"
+            subprocess.run(root_command(["mkdir", "-p", str(efi_dir)]), check=True)
+            subprocess.run(
+                root_command(["cp", str(uki), str(efi_dir / "BOOTAA64.EFI")]), check=True
+            )
+            subprocess.run(["sync"], check=True)
+            subprocess.run(root_command(["umount", mountpoint]), check=True)
+            mounted = False
+        subprocess.run(root_command(["losetup", "-d", loop_device]), check=True)
+        loop_device = ""
+        os.replace(temporary_image, destination)
+        return destination
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise Pixel4Error(f"Creating the nested GPT image failed: {exc}") from exc
+    finally:
+        if mounted and mountpoint:
+            subprocess.run(root_command(["umount", "-R", mountpoint]), check=False)
+        if loop_device:
+            subprocess.run(root_command(["losetup", "-d", loop_device]), check=False)
+        temporary_image.unlink(missing_ok=True)
 
 
 def run_uboot_build(
