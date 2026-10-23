@@ -80,7 +80,8 @@ def _verify_signature(url: str, archive: Path, cache: Path) -> None:
             "gpg is required to verify the official Arch Linux ARM rootfs signature."
         )
 
-    signature = cache / (archive.name + ".sig")
+    source_id = hashlib.sha256(url.encode("utf-8")).hexdigest()[:16]
+    signature = cache / (archive.name + "." + source_id + ".sig")
     public_key = cache / "archlinuxarm-build-system.asc"
     if not signature.is_file():
         _download(url + ".sig", signature)
