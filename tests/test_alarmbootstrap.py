@@ -1,5 +1,7 @@
 """Unit tests for the Arch-native alarmbootstrap layer."""
 
+import json
+
 from alarmbootstrap.catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, parse_deviceinfo
 from alarmbootstrap.cli import main
 from alarmbootstrap.pixel4 import DEVICE_ID
@@ -62,7 +64,7 @@ def test_cli_init_and_status(tmp_path, capsys) -> None:
         "--config", str(config), "init", "--device", "google-flame",
         "--workdir", str(workdir),
     ]) == 0
-    data = __import__("json").loads(config.read_text(encoding="utf-8"))
+    data = json.loads(config.read_text(encoding="utf-8"))
     assert data["device"] == "google-flame"
     assert data["workdir"] == str(workdir.resolve())
     assert main(["--config", str(config), "status"]) == 0
