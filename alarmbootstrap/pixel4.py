@@ -261,9 +261,10 @@ def build_disk_image(
 ) -> Path:
     """Create a nested GPT image with a FAT EFI partition and ext4 Arch root partition."""
     rootfs = rootfs.expanduser().resolve()
-    destination = destination.expanduser().resolve()
+    destination = destination.expanduser()
     if destination.is_symlink():
         raise Pixel4Error(f"Refusing to replace a symlink: {destination}")
+    destination = destination.resolve()
     if destination.exists() and not force:
         raise Pixel4Error(f"Image already exists: {destination}. Use --force to replace this image.")
     if destination == rootfs or rootfs in destination.parents:
@@ -348,14 +349,17 @@ def build_disk_image(
             mountpoint = temp_mount
             subprocess.run(root_command(["mount", efi_partition, mountpoint]), check=True)
             mounted = True
-            efi_dir = Path(mountpoint) / "EFI" / "BOOT"
-            subprocess.run(root_command(["mkdir", "-p", str(efi_dir)]), check=True)
-            subprocess.run(
-                root_command(["cp", str(uki), str(efi_dir / "BOOTAA64.EFI")]), check=True
-            )
-            subprocess.run(["sync"], check=True)
-            subprocess.run(root_command(["umount", mountpoint]), check=True)
-            mounted = False
+            try:
+                efi_dir = Path(mountpoint) / "EFI" / "BOOT"
+                subprocess.run(root_command(["mkdir", "-p", str(efi_dir)]), check=True)
+                subprocess.run(
+                    root_command(["cp", str(uki), str(efi_dir / "BOOTAA64.EFI")]), check=True
+                )
+                subprocess.run(["sync"], check=True)
+            finally:
+                if mounted:
+                    subprocess.run(root_command(["umount", mountpoint]), check=True)
+                    mounted = False
         subprocess.run(root_command(["losetup", "-d", loop_device]), check=True)
         loop_device = ""
         os.replace(temporary_image, destination)
