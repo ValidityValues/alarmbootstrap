@@ -141,19 +141,23 @@ def inspect_rootfs(rootfs: Path) -> dict[str, object]:
     ] if (rootfs / "lib/modules").is_dir() else []
     checks["SM8150 kernel modules"] = len(modules) == 1
     checks["firmware directory"] = (rootfs / "lib/firmware").is_dir()
-    artifact_checks = {key: value for key, value in checks.items()}
-    artifact_staging_complete = all(artifact_checks.values())
+    uki = rootfs / "boot/EFI/BOOT/BOOTAA64.EFI"
+    initramfs = rootfs / "boot/initramfs-alarmbootstrap-sm8150.img"
+    metadata = rootfs / "boot/alarmbootstrap-boot.json"
+    efi_bundle_generated = uki.is_file() and initramfs.is_file() and metadata.is_file()
+    artifact_staging_complete = all(checks.values())
+    blockers = []
+    if not efi_bundle_generated:
+        blockers.append("Run alarmbootstrap pixel4 build-efi to generate an Arch-compatible initramfs/UKI.")
+    blockers.append("A generated UKI is not a substitute for testing the complete image on the physical Pixel 4.")
     return {
         "rootfs": str(rootfs),
         "checks": checks,
         "module_releases": modules,
         "artifact_staging_complete": artifact_staging_complete,
-        "boot_path_complete": False,
-        "boot_path_blockers": [
-            "An Arch-compatible initramfs/UKI has not been generated.",
-            "No verified root partition image or root identifier has been configured.",
-            "The copied Nura EFI file is retained for inspection, not treated as an Arch boot image.",
-        ],
+        "efi_bundle_generated": efi_bundle_generated,
+        "physical_boot_verified": False,
+        "boot_path_blockers": blockers,
     }
 
 
