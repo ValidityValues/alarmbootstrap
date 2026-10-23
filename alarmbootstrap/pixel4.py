@@ -195,13 +195,48 @@ pacman-key --populate archlinuxarm
 pacman -Syu --noconfirm --needed mkinitcpio systemd-ukify binutils
 
 cat > /etc/mkinitcpio-alarmbootstrap.conf <<'EOF'
-MODULES=()
-BINARIES=()
+MODULES=(loop)
+BINARIES=(/usr/bin/blkid /usr/bin/losetup /usr/bin/udevadm)
 FILES=()
-HOOKS=(base udev modconf block filesystems fsck)
+HOOKS=(base udev modconf block alarmbootstrap-nestedpart filesystems fsck)
 COMPRESSION="zstd"
 EOF
 
+mkdir -p /etc/initcpio/hooks /etc/initcpio/install
+cat > /etc/initcpio/install/alarmbootstrap-nestedpart <<'EOF'
+#!/usr/bin/bash
+build() {
+    add_module loop
+    add_binary /usr/bin/blkid
+    add_binary /usr/bin/losetup
+    add_binary /usr/bin/udevadm
+    add_runscript
+}
+help() {
+    cat <<'HELP'
+Scan the Android userdata partition as a disk image to expose its nested GPT partitions.
+HELP
+}
+EOF
+cat > /etc/initcpio/hooks/alarmbootstrap-nestedpart <<'EOF'
+run_hook() {
+    local device label loopdev
+    for device in /dev/sd* /dev/nvme* /dev/mmcblk*; do
+        [[ -b "$device" ]] || continue
+        label="$(blkid -s PARTLABEL -o value "$device" 2>/dev/null || true)"
+        if [[ "$label" == "userdata" ]]; then
+            msg "Found userdata partition at $device; scanning nested GPT"
+            loopdev="$(losetup --find --show --partscan "$device")" || return 1
+            udevadm settle
+            msg "Nested partitions exposed through $loopdev"
+            return 0
+        fi
+    done
+    err "Could not find Android userdata (PARTLABEL=userdata)"
+    return 1
+}
+EOF
+chmod 0644 /etc/mkinitcpio-alarmbootstrap.conf
 mkinitcpio -c /etc/mkinitcpio-alarmbootstrap.conf \
     -k "$kernel_release" -g /boot/initramfs-alarmbootstrap-sm8150.img
 
