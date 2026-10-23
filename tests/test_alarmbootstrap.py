@@ -1,6 +1,7 @@
 """Unit tests for the Arch-native alarmbootstrap layer."""
 
 from alarmbootstrap.catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, parse_deviceinfo
+from alarmbootstrap.cli import main
 from alarmbootstrap.pixel4 import DEVICE_ID
 from alarmbootstrap.rootfs import DEFAULT_AARCH64_URL
 
@@ -52,3 +53,25 @@ def test_catalog_contains_full_nura_id_snapshot() -> None:
     assert len(ids) >= 600
     assert "google-flame" in ids
     assert all(item.get("id") for item in catalog["devices"])
+
+
+def test_cli_init_and_status(tmp_path, capsys) -> None:
+    config = tmp_path / "config" / "config.json"
+    workdir = tmp_path / "work"
+    assert main([
+        "--config", str(config), "init", "--device", "google-flame",
+        "--workdir", str(workdir),
+    ]) == 0
+    data = __import__("json").loads(config.read_text(encoding="utf-8"))
+    assert data["device"] == "google-flame"
+    assert data["workdir"] == str(workdir.resolve())
+    assert main(["--config", str(config), "status"]) == 0
+    output = capsys.readouterr().out
+    assert "Arch rootfs: not installed" in output
+
+
+def test_native_device_query_lists_pixel4(capsys) -> None:
+    assert main(["devices", "--query", "google-flame"]) == 0
+    output = capsys.readouterr().out
+    assert "Google Pixel 4" in output
+    assert "Arch-native priority" in output
