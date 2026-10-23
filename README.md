@@ -29,7 +29,7 @@ those legacy actions still require a compatible pmaports/APK environment.
 A Linux host is required. Windows Subsystem for Linux is not recommended for image/loop-device
 work. Install these tools using your distribution's package manager:
 
-- Python 3.10 or newer, Git, bsdtar (libarchive), tar, sudo
+- Python 3.10 or newer, Git, bsdtar (libarchive), tar, sudo, and GnuPG (`gpg`) for authenticating the rootfs
 - fastboot and Android platform tools for the optional Pixel 4 bootloader step
 - For U-Boot builds: make, an AArch64 cross compiler (aarch64-linux-gnu-gcc), bison,
   flex, swig, dtc, OpenSSL development headers and the mkbootimg utility
@@ -42,7 +42,7 @@ registration is required. The installer does not silently install or enable a ho
 
 Clone the repository and install it in an isolated Python environment:
 
-\`\`\`sh
+```sh
 git clone https://github.com/ValidityValues/alarmbootstrap.git
 cd alarmbootstrap
 python3 -m venv .venv
@@ -50,7 +50,7 @@ python3 -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install -e '.[test]'
 alarmbootstrap --help
-\`\`\`
+```
 
 To run the upstream pmbootstrap test suite, use the upstream CI/dev environment requirements
 and the pmb compatibility code. Not every upstream integration test is expected to pass
@@ -60,10 +60,10 @@ without a local pmaports tree and APK tools.
 
 Create the default configuration and working directory:
 
-\`\`\`sh
+```sh
 alarmbootstrap init --device google-flame
 alarmbootstrap status
-\`\`\`
+```
 
 The default work directory is ~/.local/share/alarmbootstrap. Override it with --workdir.
 The configuration file is ~/.config/alarmbootstrap/config.json by default.
@@ -73,11 +73,11 @@ The configuration file is ~/.config/alarmbootstrap/config.json by default.
 Device metadata and kernel recipes live in pmaports, not in pmbootstrap itself. Synchronise the
 catalog from a local pmaports checkout (recommended), or let the command make a shallow clone:
 
-\`\`\`sh
+```sh
 git clone --depth=1 https://gitlab.postmarketos.org/postmarketOS/pmaports.git ~/pmaports
 alarmbootstrap devices --sync-nura --ports-dir ~/pmaports
 alarmbootstrap devices
-\`\`\`
+```
 
 The generated catalog is stored in the alarmbootstrap working directory. Existing IDs are
 preserved when the upstream catalog changes; devices removed upstream are marked retired rather
@@ -85,23 +85,25 @@ than discarded. To commit a generated catalog into a checkout, pass --output dev
 
 ## 3. Create an Arch Linux ARM AArch64 rootfs
 
-\`\`\`sh
+```sh
 alarmbootstrap install
-\`\`\`
+```
 
 By default this downloads the official generic AArch64 Arch Linux ARM root filesystem and
-extracts it into $WORKDIR/rootfs. The installer checks the published MD5 file for accidental
-download corruption; MD5 is **not** a cryptographic authenticity check. The archive is extracted
-with bsdtar to preserve numeric ownership, ACLs and extended attributes. The command does not
+extracts it into $WORKDIR/rootfs. The installer verifies the detached PGP signature against the pinned Arch Linux ARM Build System
+fingerprint `68B3537F39A313B3E574D06777193F152BDBE6A6`, then checks the published MD5 checksum as an
+additional download-integrity check. Signature verification fails closed if GnuPG or the expected
+signing key is unavailable. The archive is extracted with `bsdtar` to preserve numeric ownership,
+ACLs and extended attributes. The command does not
 flash, repartition or write to a connected device.
 
 Useful options:
 
-\`\`\`sh
+```sh
 alarmbootstrap install --workdir ~/alarmbootstrap-work
 alarmbootstrap install --url https://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
 alarmbootstrap install --force
-\`\`\`
+```
 
 --force only replaces the local rootfs directory inside the selected working directory.
 Check that the work directory has enough free space before downloading.
@@ -110,15 +112,15 @@ Check that the work directory has enough free space before downloading.
 
 Do **not** replace the SM8150 device stack with a generic kernel when preparing flame.
 Use a working Nura/postmarketOS rootfs that contains the existing kernel package artifacts.
-The current Nura package exposes /boot/linux.efi, /boot/vmlinuz,
- /boot/dtbs/qcom/sm8150-google-flame.dtb, and /lib/modules/*sm8150*.
+The current Nura package exposes `/boot/linux.efi`, `/boot/vmlinuz`,
+`/boot/dtbs/qcom/sm8150-google-flame.dtb`, and `/lib/modules/*sm8150*`.
 
 With a Nura rootfs available, stage the kernel artifacts into the Arch rootfs:
 
-\`\`\`sh
+```sh
 alarmbootstrap pixel4 stage-kernel --nura-rootfs /path/to/nura-rootfs
 alarmbootstrap pixel4 inspect
-\`\`\`
+```
 
 The command copies the existing EFI kernel, SM8150 DTB, matching modules and the available
 firmware tree; it does not compile new drivers. It keeps the original Arch kernel files and
@@ -135,28 +137,28 @@ The helper clones the exact branch and applies the userdata blkmap preboot confi
 for this device. It builds an Android boot image but does **not** flash it unless --flash is
 passed explicitly.
 
-\`\`\`sh
+```sh
 ./scripts/build-google-flame-uboot.sh
-\`\`\`
+```
 
 Before attempting any flash, ensure the bootloader is unlocked, save a known-good boot image using
 a method supported by your device, and verify that fastboot detects exactly one device. Only then:
 
-\`\`\`sh
+```sh
 ./scripts/build-google-flame-uboot.sh --flash
-\`\`\`
+```
 
-Flashing U-Boot to boot replaces the current boot partition. The script asks you to type
-FLASH boot and records the image SHA-256, but this is not a substitute for a tested recovery
-path. Do not use flash_rootfs or raw block-device commands on the phone unless you have
+Flashing U-Boot to `boot` replaces the current boot partition. The script asks you to type
+`FLASH boot`, checks that fastboot sees exactly one device and checks the reported product is
+`flame`. It records the image SHA-256, but this is not a substitute for a tested recovery path. Do not use flash_rootfs or raw block-device commands on the phone unless you have
 verified the nested-partition layout and the exact destination.
 
 ## 6. Enter and export the staged rootfs
 
-\`\`\`sh
+```sh
 alarmbootstrap chroot
 alarmbootstrap export
-\`\`\`
+```
 
 AArch64 chroot on x86_64 requires QEMU/binfmt configured by the host. Export creates a compressed
 tar archive of the rootfs for inspection or later image-building; it is **not** a ready-to-flash
@@ -169,20 +171,20 @@ network boot, QEMU, flashing, package and diagnostic commands. Non-native comman
 to that compatibility implementation. They still depend on the original Alpine/APK/pmaports
 workflow and are not yet equivalent to a fully ported Arch backend. Use them deliberately:
 
-\`\`\`sh
+```sh
 alarmbootstrap legacy status
 alarmbootstrap legacy bootimg_analyze /path/to/boot.img
-\`\`\`
+```
 
 The Arch-native commands are init, devices, install, status, chroot, export and pixel4.
 Run alarmbootstrap --help for the up-to-date syntax.
 
 ## Development and tests
 
-\`\`\`sh
+```sh
 python -m pytest
 python -m compileall -q alarmbootstrap pmb
-\`\`\`
+```
 
 Hardware validation still requires a real Pixel 4. A successful host-side rootfs extraction does
 not prove that U-Boot, EFI, storage, display, touch, Wi-Fi, Bluetooth, audio or GPU acceleration
