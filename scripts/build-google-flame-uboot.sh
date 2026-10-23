@@ -56,7 +56,7 @@ if [[ -z "$WORKDIR" ]]; then
 fi
 mkdir -p "$WORKDIR"
 
-for tool in git make aarch64-linux-gnu-gcc gzip cat mkbootimg sha256sum python3; do
+for tool in git make aarch64-linux-gnu-gcc aarch64-linux-gnu-ld aarch64-linux-gnu-objcopy bison flex swig dtc openssl gzip cat mkbootimg sha256sum python3 nproc awk grep; do
     command -v "$tool" >/dev/null 2>&1 || {
         echo "Missing required tool: $tool" >&2
         exit 2
@@ -154,6 +154,12 @@ if ((FLASH)); then
         printf '%s\n' "$devices" >&2
         exit 2
     }
+    product="$(fastboot getvar product 2>&1 || true)"
+    if ! grep -Eiq 'product:[[:space:]]*flame([[:space:]]|$)' <<< "$product"; then
+        echo "Refusing to flash: fastboot did not identify the device as product flame." >&2
+        printf '%s\n' "$product" >&2
+        exit 2
+    fi
     [[ -t 0 ]] || { echo "--flash requires an interactive terminal for confirmation" >&2; exit 2; }
     echo "WARNING: this overwrites the phone's boot partition."
     echo "Ensure a known-good recovery path and boot image backup are available."
