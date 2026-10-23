@@ -33,7 +33,7 @@ work. Install these tools using your distribution's package manager:
 - fastboot and Android platform tools for the optional Pixel 4 bootloader step
 - For U-Boot builds: make, an AArch64 cross compiler (aarch64-linux-gnu-gcc), bison,
   flex, swig, dtc, OpenSSL development headers and the mkbootimg utility
-- At least 4 GiB free space for the downloaded generic AArch64 rootfs; more is recommended
+- At least 5 GiB free space for the compressed archive plus extracted rootfs; more is recommended
 
 For cross-architecture chroot operations on an x86_64 host, a working AArch64 binfmt/QEMU
 registration is required. The installer does not silently install or enable a host binfmt handler.
@@ -79,9 +79,12 @@ alarmbootstrap devices --sync-nura --ports-dir ~/pmaports
 alarmbootstrap devices
 ```
 
-The generated catalog is stored in the alarmbootstrap working directory. Existing IDs are
-preserved when the upstream catalog changes; devices removed upstream are marked retired rather
-than discarded. To commit a generated catalog into a checkout, pass --output devices/nura-catalog.json.
+The checked-in baseline preserves **670 unique device IDs** from 671 `deviceinfo` entries in the
+pmaports mirror snapshot, including archived entries. Non-Pixel-4 records are metadata-only until
+they have a reviewed Arch port; a catalog entry does not claim that a device boots Arch Linux ARM.
+Syncing enriches records with literal `deviceinfo` fields. Existing IDs are preserved when upstream
+changes, and removed entries are marked retired rather than discarded. To write the synchronized
+catalog into a chosen checkout path, pass `--output devices/nura-catalog.json`.
 
 ## 3. Create an Arch Linux ARM AArch64 rootfs
 
@@ -115,16 +118,18 @@ Use a working Nura/postmarketOS rootfs that contains the existing kernel package
 The current Nura package exposes `/boot/linux.efi`, `/boot/vmlinuz`,
 `/boot/dtbs/qcom/sm8150-google-flame.dtb`, and `/lib/modules/*sm8150*`.
 
-With a Nura rootfs available, stage the kernel artifacts into the Arch rootfs:
+With a Nura rootfs available, stage the kernel artifacts into the Arch rootfs (this copies files only; it does not make the embedded Nura initramfs automatically compatible with Arch):
 
 ```sh
 alarmbootstrap pixel4 stage-kernel --nura-rootfs /path/to/nura-rootfs
 alarmbootstrap pixel4 inspect
 ```
 
-The command copies the existing EFI kernel, SM8150 DTB, matching modules and the available
-firmware tree; it does not compile new drivers. It keeps the original Arch kernel files and
-places the postmarketOS kernel under a separate name. A kernel/modules mismatch is a hard error.
+The command copies the existing EFI kernel, SM8150 DTB, matching modules and available firmware;
+it does not compile substitute drivers. It keeps the original Arch kernel files and places the
+postmarketOS kernel under a separate name. A kernel/modules mismatch is a hard error. This is a
+staging step, not proof that the kernel's embedded initramfs or command line can boot the Arch
+rootfs; adapting that boot flow remains a required development task.
 
 Nura's published device package currently depends on the existing linux-postmarketos-qcom-sm8150
 kernel, firmware-google-flame, device-google-flame, and Qualcomm userspace packages. Their
