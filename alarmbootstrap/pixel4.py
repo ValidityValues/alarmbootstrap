@@ -17,6 +17,45 @@ class Pixel4Error(RuntimeError):
     """A Pixel 4 staging or validation failure."""
 
 
+def unpack_nura_packages(packages: list[Path], destination: Path) -> Path:
+    """Extract selected APKs built with Nura into a temporary donor tree."""
+    if not packages:
+        raise Pixel4Error("Provide at least one --package (kernel and firmware APKs are needed).")
+    if not shutil.which("bsdtar"):
+        raise Pixel4Error("bsdtar is required to extract .apk packages (install libarchive).")
+
+    destination = destination.expanduser().resolve()
+    if destination.is_symlink():
+        raise Pixel4Error(f"Refusing to extract into a symlink: {destination}")
+    if destination.exists():
+        raise Pixel4Error(
+            f"Package staging directory already exists: {destination}. "
+            "Remove it after inspecting its contents, then retry."
+        )
+    destination.mkdir(parents=True)
+
+    for package_arg in packages:
+        package = package_arg.expanduser().resolve()
+        if not package.is_file() or package.suffix != ".apk":
+            raise Pixel4Error(f"Expected an existing .apk file, got: {package}")
+        listing = subprocess.run(
+            ["bsdtar", "-tf", str(package)],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+        ).stdout
+        for member in listing.splitlines():
+            path = Path(member)
+            if path.is_absolute() or ".." in path.parts:
+                raise Pixel4Error(f"Unsafe path in package {package.name}: {member!r}")
+        subprocess.run(
+            root_command(["bsdtar", "-xpf", str(package), "-C", str(destination)]),
+            check=True,
+        )
+    return destination
+
+
 def stage_kernel(nura_rootfs: Path, arch_rootfs: Path) -> list[Path]:
     """Copy existing Nura kernel artifacts, modules and firmware into an ALARM rootfs."""
     source = nura_rootfs.expanduser().resolve()
