@@ -12,7 +12,12 @@ import urllib.request
 from pathlib import Path, PurePosixPath
 
 DEFAULT_AARCH64_URL = "https://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz"
-MIN_FREE_BYTES = 3 * 1024**3
+ALARM_SIGNING_FINGERPRINT = "68B3537F39A313B3E574D06777193F152BDBE6A6"
+ALARM_SIGNING_KEY_URL = (
+    "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x"
+    + ALARM_SIGNING_FINGERPRINT
+)
+MIN_FREE_BYTES = 5 * 1024**3
 
 
 class RootfsError(RuntimeError):
@@ -68,6 +73,79 @@ def _published_md5(url: str) -> str:
     return match.group(1).lower()
 
 
+def _verify_signature(url: str, archive: Path, cache: Path) -> None:
+    """Verify the official ALARM release signature against a pinned full fingerprint."""
+    if shutil.which("gpg") is None:
+        raise RootfsError(
+            "gpg is required to verify the official Arch Linux ARM rootfs signature."
+        )
+
+    signature = cache / (archive.name + ".sig")
+    public_key = cache / "archlinuxarm-build-system.asc"
+    if not signature.is_file():
+        _download(url + ".sig", signature)
+    if not public_key.is_file():
+        _download(ALARM_SIGNING_KEY_URL, public_key)
+
+    with tempfile.TemporaryDirectory(prefix="alarmbootstrap-gnupg-") as homedir:
+        home = Path(homedir)
+        os.chmod(home, 0o700)
+        try:
+            subprocess.run(
+                ["gpg", "--homedir", str(home), "--batch", "--import", str(public_key)],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+            listing = subprocess.run(
+                ["gpg", "--homedir", str(home), "--batch", "--with-colons",
+                 "--fingerprint", "--list-keys"],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            ).stdout
+            fingerprints = {
+                fields[9].upper()
+                for line in listing.splitlines()
+                if (fields := line.split(":"))[0] == "fpr" and len(fields) > 9
+            }
+            if ALARM_SIGNING_FINGERPRINT not in fingerprints:
+                raise RootfsError(
+                    "The downloaded signing key does not match the pinned Arch Linux ARM "
+                    f"fingerprint {ALARM_SIGNING_FINGERPRINT}."
+                )
+            verification = subprocess.run(
+                ["gpg", "--homedir", str(home), "--batch", "--status-fd=1",
+                 "--verify", str(signature), str(archive)],
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+            valid_signatures = [
+                line.split()
+                for line in verification.stdout.splitlines()
+                if line.startswith("[GNUPG:] VALIDSIG ")
+            ]
+            if not any(
+                len(fields) > 2
+                and (
+                    fields[2].upper() == ALARM_SIGNING_FINGERPRINT
+                    or fields[-1].upper() == ALARM_SIGNING_FINGERPRINT
+                )
+                for fields in valid_signatures
+            ):
+                raise RootfsError(
+                    "The archive signature is valid, but it was not made by the pinned "
+                    "Arch Linux ARM signing key."
+                )
+        except subprocess.CalledProcessError as exc:
+            details = (exc.stderr or exc.stdout or str(exc)).strip()
+            raise RootfsError(f"Arch Linux ARM signature verification failed: {details}") from exc
+
+
 def _validate_archive(archive: Path) -> None:
     if shutil.which("bsdtar") is None:
         raise RootfsError(
@@ -113,6 +191,7 @@ def install_rootfs(workdir: Path, url: str = DEFAULT_AARCH64_URL, force: bool = 
         _download(url, archive)
         source_marker.write_text(url + "\n", encoding="utf-8")
 
+    _verify_signature(url, archive, cache)
     expected = _published_md5(url)
     actual = hashlib.md5()
     with archive.open("rb") as stream:
