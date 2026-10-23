@@ -15,6 +15,8 @@ from .catalog import BUILTIN_CATALOG, load_catalog, merge_catalogs, sync_nura_ca
 from .chroot import run_in_rootfs
 from .pixel4 import (
     Pixel4Error,
+    build_disk_image,
+    build_efi,
     inspect_rootfs,
     run_uboot_build,
     stage_kernel,
@@ -98,6 +100,18 @@ def _parser() -> argparse.ArgumentParser:
         help="Nura .apk artifact to extract (repeat for kernel and firmware packages)",
     )
     stage.add_argument("--workdir", type=Path, default=None)
+    build_efi_parser = pixel_sub.add_parser(
+        "build-efi", help="build an Arch initramfs and UKI using the staged Nura kernel"
+    )
+    build_efi_parser.add_argument("--root-label", default="ALARMROOT")
+    build_efi_parser.add_argument("--workdir", type=Path, default=None)
+    build_image_parser = pixel_sub.add_parser(
+        "build-image", help="create a nested GPT image with EFI and ext4 rootfs partitions"
+    )
+    build_image_parser.add_argument("--destination", type=Path, default=None)
+    build_image_parser.add_argument("--esp-mib", type=int, default=512)
+    build_image_parser.add_argument("--force", action="store_true")
+    build_image_parser.add_argument("--workdir", type=Path, default=None)
     inspect = pixel_sub.add_parser("inspect", help="check staged Pixel 4 artifacts")
     inspect.add_argument("--workdir", type=Path, default=None)
     uboot = pixel_sub.add_parser("build-uboot", help="build Andrew Gigena's Pixel 4 U-Boot branch")
@@ -267,6 +281,25 @@ def main(argv: list[str] | None = None) -> int:
                 for item in copied:
                     print(f"  {item}")
                 print("Files staged only; this does not create or flash a bootable disk image.")
+                return 0
+            if args.pixel_action == "build-efi":
+                uki = build_efi(rootfs, args.root_label)
+                print(f"Built Arch UKI: {uki}")
+                print("This creates a boot bundle; it does not verify boot on the physical phone.")
+                return 0
+            if args.pixel_action == "build-image":
+                destination = args.destination or (
+                    workdir / "export/alarmbootstrap-google-flame-gpt.img"
+                )
+                image = build_disk_image(
+                    rootfs, destination, esp_mib=args.esp_mib, force=args.force
+                )
+                print(f"Created nested GPT image: {image}")
+                print("No device was flashed.")
+                print(
+                    "WARNING: flashing this image to the phone's userdata partition overwrites "
+                    "existing userdata and may destroy Android user data."
+                )
                 return 0
             if args.pixel_action == "inspect":
                 report = inspect_rootfs(rootfs)
