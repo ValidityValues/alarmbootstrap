@@ -15,4 +15,9 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[test]"
       - run: python -m compileall -q alarmbootstrap pmb
+      - run: bash -n scripts/build-google-flame-uboot.sh
       - run: python -m pytest -q tests/test_alarmbootstrap.py
+      - run: python -m pip wheel --no-deps --wheel-dir /tmp/alarmbootstrap-wheel .
+      - run: python -m pip install --force-reinstall --no-deps /tmp/alarmbootstrap-wheel/alarmbootstrap-*.whl
+      - run: cd /tmp && alarmbootstrap --help
+      - run: cd /tmp && alarmbootstrap devices --query google-flame
