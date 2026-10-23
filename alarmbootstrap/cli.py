@@ -284,7 +284,7 @@ def main(argv: list[str] | None = None) -> int:
             if args.pixel_action == "inspect":
                 report = inspect_rootfs(rootfs)
                 print(json.dumps(report, indent=2))
-                return 0 if report["ready_for_hardware_test"] else 1
+                return 0 if report["artifact_staging_complete"] else 1
             if args.pixel_action == "build-uboot":
                 return run_uboot_build(args.flash, args.source, workdir / "uboot")
     except (
